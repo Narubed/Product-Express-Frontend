@@ -3,9 +3,11 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Helmet from "react-helmet";
 import NewsletterModal from "~/components/features/modals/newsletter-modal";
-// import IntroSection from "~/components/partials/home/intro-section";
 import IntroSection from "~/components/partials/home/carosel";
 import IntroBanners from "~/components/partials/home/intro-banners";
+import DealSection from "~/components/partials/home/deal-section";
+import InstagramSection from "~/components/partials/home/instagram-section";
+
 export default function Home() {
   return (
     <div>
@@ -20,6 +22,9 @@ export default function Home() {
       <div className="page-content">
         <IntroSection />
         <IntroBanners />
+
+        <DealSection />
+        <InstagramSection />
       </div>
       <NewsletterModal />
     </div>
