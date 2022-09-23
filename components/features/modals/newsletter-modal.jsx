@@ -68,7 +68,7 @@ export default function NewsletterModal () {
                     </form>
                     <div className="form-checkbox justify-content-center">
                         <input type="checkbox" value={ noMore } className="custom-checkbox" id="hide-newsletter-popup" onChange={ handleChange } name="hide-newsletter-popup" required />
-                        <label htmlFor="hide-newsletter-popup">Don't show this popup again</label>
+                        <label htmlFor="hide-newsletter-popup">{"Don't show this popup again"}</label>
                     </div>
                 </div>
                 <button title="Close (Esc)" type="button" className="mfp-close" onClick={ closeModal }><span>×</span></button></div>
