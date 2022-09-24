@@ -44,7 +44,7 @@ function Discount() {
         >
           <button
             type="button"
-            class="btn btn-primary"
+            className="btn btn-primary"
             style={{ marginRight: "2%" }}
           >
             View All

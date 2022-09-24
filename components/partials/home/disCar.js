@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Carousel } from "@trendyol-js/react-carousel";
 
@@ -11,9 +12,9 @@ function DisCar(props) {
       swiping={"true"}
       useArrowKeys={"true"}
     >
-      <div class="item" style={{ paddingBottom: "10% !important" }}>
+      <div className="item" style={{ paddingBottom: "10% !important" }}>
         <div
-          class="pad15"
+          className="pad15"
           style={{
             textAlign: "center",
             padding: "6%",
@@ -29,16 +30,16 @@ function DisCar(props) {
           <p>$ 6000</p>
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             style={{ marginBottom: "3%", marginTop: "-5%" }}
           >
             Buy now
           </button>
         </div>
       </div>
-      <div class="item" style={{ paddingBottom: "10% !important" }}>
+      <div className="item" style={{ paddingBottom: "10% !important" }}>
         <div
-          class="pad15"
+          className="pad15"
           style={{
             textAlign: "center",
             padding: "6%",
@@ -54,16 +55,16 @@ function DisCar(props) {
           <p>$ 6000</p>
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             style={{ marginBottom: "3%", marginTop: "-5%" }}
           >
             Buy now
           </button>
         </div>
       </div>
-      <div class="item" style={{ paddingBottom: "10% !important" }}>
+      <div className="item" style={{ paddingBottom: "10% !important" }}>
         <div
-          class="pad15"
+          className="pad15"
           style={{
             textAlign: "center",
 
@@ -80,16 +81,16 @@ function DisCar(props) {
           <p>$ 6000</p>
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             style={{ marginBottom: "3%", marginTop: "-5%" }}
           >
             Buy now
           </button>
         </div>
       </div>
-      <div class="item" style={{ paddingBottom: "10% !important" }}>
+      <div className="item" style={{ paddingBottom: "10% !important" }}>
         <div
-          class="pad15"
+          className="pad15"
           style={{
             textAlign: "center",
 
@@ -106,16 +107,16 @@ function DisCar(props) {
           <p>$ 6000</p>
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             style={{ marginBottom: "3%", marginTop: "-5%" }}
           >
             Buy now
           </button>
         </div>
       </div>
-      <div class="item" style={{ paddingBottom: "10% !important" }}>
+      <div className="item" style={{ paddingBottom: "10% !important" }}>
         <div
-          class="pad15"
+          className="pad15"
           style={{
             textAlign: "center",
 
@@ -132,16 +133,16 @@ function DisCar(props) {
           <p>$ 6000</p>
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             style={{ marginBottom: "3%", marginTop: "-5%" }}
           >
             Buy now
           </button>
         </div>
       </div>
-      <div class="item" style={{ paddingBottom: "10% !important" }}>
+      <div className="item" style={{ paddingBottom: "10% !important" }}>
         <div
-          class="pad15"
+          className="pad15"
           style={{
             textAlign: "center",
 
@@ -158,16 +159,16 @@ function DisCar(props) {
           <p>$ 6000</p>
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             style={{ marginBottom: "3%", marginTop: "-5%" }}
           >
             Buy now
           </button>
         </div>
       </div>
-      <div class="item" style={{ paddingBottom: "10% !important" }}>
+      <div className="item" style={{ paddingBottom: "10% !important" }}>
         <div
-          class="pad15"
+          className="pad15"
           style={{
             textAlign: "center",
 
@@ -184,16 +185,16 @@ function DisCar(props) {
           <p>$ 6000</p>
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             style={{ marginBottom: "3%", marginTop: "-5%" }}
           >
             Buy now
           </button>
         </div>
       </div>
-      <div class="item" style={{ paddingBottom: "10% !important" }}>
+      <div className="item" style={{ paddingBottom: "10% !important" }}>
         <div
-          class="pad15"
+          className="pad15"
           style={{
             textAlign: "center",
 
@@ -210,16 +211,16 @@ function DisCar(props) {
           <p>$ 6000</p>
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             style={{ marginBottom: "3%", marginTop: "-5%" }}
           >
             Buy now
           </button>
         </div>
       </div>
-      <div class="item" style={{ paddingBottom: "10% !important" }}>
+      <div className="item" style={{ paddingBottom: "10% !important" }}>
         <div
-          class="pad15"
+          className="pad15"
           style={{
             textAlign: "center",
 
@@ -236,16 +237,16 @@ function DisCar(props) {
           <p>$ 6000</p>
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             style={{ marginBottom: "3%", marginTop: "-5%" }}
           >
             Buy now
           </button>
         </div>
       </div>
-      <div class="item" style={{ paddingBottom: "10% !important" }}>
+      <div className="item" style={{ paddingBottom: "10% !important" }}>
         <div
-          class="pad15"
+          className="pad15"
           style={{
             textAlign: "center",
 
@@ -262,7 +263,7 @@ function DisCar(props) {
           <p>$ 6000</p>
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             style={{ marginBottom: "3%", marginTop: "-5%" }}
           >
             Buy now

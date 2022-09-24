@@ -16,7 +16,7 @@ import {
 export default function CarouselComponent() {
   return (
     <section className="intro-section" style={{ overflow: "hidden" }}>
-      <div class="carousel-wrapper">
+      <div className="carousel-wrapper">
         <Carousel
           infiniteLoop
           useKeyboardArrows
