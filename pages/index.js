@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import Helmet from "react-helmet";
 import NewsletterModal from "~/components/features/modals/newsletter-modal";
@@ -7,8 +8,14 @@ import IntroSection from "~/components/partials/home/carosel";
 import IntroBanners from "~/components/partials/home/intro-banners";
 import DealSection from "~/components/partials/home/deal-section";
 import InstagramSection from "~/components/partials/home/instagram-section";
+import useCurrentUser from "~/lib/hook/useCurrentUser";
 
 export default function Home() {
+  const { currentUser, fetcherWithToken } = useCurrentUser();
+  useEffect(() => {
+    console.log(currentUser);
+  }, [currentUser]);
+
   return (
     <div>
       <Head>

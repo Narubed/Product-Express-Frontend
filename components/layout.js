@@ -5,8 +5,7 @@ import { useRouter } from "next/router";
 import "react-toastify/dist/ReactToastify.min.css";
 // import "react-image-lightbox/style.css";
 // import "react-input-range/lib/css/index.css";
-
-import ALink from "~/components/features/custom-link";
+import Link from "next/link";
 
 import Header from "~/components/common/header";
 import Footer from "~/components/common/footer";
@@ -15,7 +14,7 @@ import StickyFooter from "~/components/common/sticky-footer";
 // import VideoModal from "~/components/features/modals/video-modal";
 import MobileMenu from "~/components/common/partials/mobile-menu";
 
-import { modalActions } from "~/store/modal";
+// import { modalActions } from "~/store/modal";
 
 import {
   showScrollTopHandler,
@@ -72,16 +71,17 @@ function Layout({ children, closeQuickview }) {
         <StickyFooter />
       </div>
 
-      <ALink
-        id="scroll-top"
-        href="#"
-        title="Top"
-        role="button"
-        className="scroll-top"
-        onClick={() => scrollTopHandler(false)}
-      >
-        <i className="d-icon-arrow-up"></i>
-      </ALink>
+      <Link href="#">
+        <button
+          id="scroll-top"
+          title="Top"
+          role="button"
+          className="scroll-top"
+          onClick={() => scrollTopHandler(false)}
+        >
+          <i className="d-icon-arrow-up"></i>
+        </button>
+      </Link>
 
       <MobileMenu />
 
@@ -103,6 +103,4 @@ function Layout({ children, closeQuickview }) {
   );
 }
 
-export default connect(null, { closeQuickview: modalActions.closeQuickview })(
-  Layout
-);
+export default Layout;

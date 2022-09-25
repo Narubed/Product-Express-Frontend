@@ -23,10 +23,8 @@ function Discount() {
   }
 
   return (
-    <div style={{}}>
-      <div className="App">
-        <MediaQuery />
-      </div>
+    <div className="App">
+      <MediaQuery />
     </div>
   );
 }

@@ -2,8 +2,7 @@ import React from "react";
 import { Carousel } from "@trendyol-js/react-carousel";
 import Reveal from "react-awesome-reveal";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ALink from "~/components/features/custom-link";
-
+import Link from "next/link";
 function DisCar(props) {
   return (
     <Carousel
@@ -15,7 +14,7 @@ function DisCar(props) {
       useArrowKeys={"true"}
     >
       <figure className="instagram">
-        <ALink href="#">
+        <Link href="/">
           <LazyLoadImage
             src="https://www.d-themes.com/react/riode/demo-19/images/home/instagram/1.jpg"
             alt="instagram"
@@ -23,10 +22,10 @@ function DisCar(props) {
             width="auto"
             height="auto"
           />
-        </ALink>
+        </Link>
       </figure>
       <figure className="instagram">
-        <ALink href="#">
+        <Link href="/">
           <LazyLoadImage
             src="https://www.d-themes.com/react/riode/demo-19/images/home/instagram/2.jpg"
             alt="instagram"
@@ -34,10 +33,10 @@ function DisCar(props) {
             width="auto"
             height="auto"
           />
-        </ALink>
+        </Link>
       </figure>
       <figure className="instagram">
-        <ALink href="#">
+        <Link href="/">
           <LazyLoadImage
             src="https://www.d-themes.com/react/riode/demo-19/images/home/instagram/3.jpg"
             alt="instagram"
@@ -45,10 +44,10 @@ function DisCar(props) {
             width="auto"
             height="auto"
           />
-        </ALink>
+        </Link>
       </figure>
       <figure className="instagram">
-        <ALink href="#">
+        <Link href="/">
           <LazyLoadImage
             src="https://www.d-themes.com/react/riode/demo-19/images/home/instagram/4.jpg"
             alt="instagram"
@@ -56,10 +55,10 @@ function DisCar(props) {
             width="auto"
             height="auto"
           />
-        </ALink>
+        </Link>
       </figure>
       <figure className="instagram">
-        <ALink href="#">
+        <Link href="/">
           <LazyLoadImage
             src="https://www.d-themes.com/react/riode/demo-19/images/home/instagram/5.jpg"
             alt="instagram"
@@ -67,10 +66,10 @@ function DisCar(props) {
             width="auto"
             height="auto"
           />
-        </ALink>
+        </Link>
       </figure>
       <figure className="instagram">
-        <ALink href="#">
+        <Link href="/">
           <LazyLoadImage
             src="https://www.d-themes.com/react/riode/demo-19/images/home/instagram/6.jpg"
             alt="instagram"
@@ -78,7 +77,7 @@ function DisCar(props) {
             width="auto"
             height="auto"
           />
-        </ALink>
+        </Link>
       </figure>
     </Carousel>
   );

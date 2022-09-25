@@ -1,10 +1,10 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "react-awesome-reveal";
 
 // import Custom Components
-import ALink from "~/components/features/custom-link";
 
 import {
   fadeIn,
@@ -60,9 +60,11 @@ export default function CarouselComponent() {
               </Reveal>
 
               <Reveal keyframes={fadeInUpShorter} delay={500} duration={1200}>
-                <ALink href="/shop" className="btn btn-dark ml-1">
-                  Shop Now <i className="d-icon-arrow-right"></i>
-                </ALink>
+                <Link href="/shop">
+                  <button className="btn btn-dark ml-1">
+                    Shop Now <i className="d-icon-arrow-right"></i>
+                  </button>
+                </Link>
               </Reveal>
             </div>
           </div>
@@ -101,9 +103,11 @@ export default function CarouselComponent() {
               </Reveal>
 
               <Reveal keyframes={fadeInLeftShorter} delay={400} duration={1200}>
-                <ALink href="/shop" className="btn btn-dark ml-1">
-                  Shop Now <i className="d-icon-arrow-right"></i>
-                </ALink>
+                <Link href="/shop">
+                  <button className="btn btn-dark ml-1">
+                    Shop Now <i className="d-icon-arrow-right"></i>
+                  </button>
+                </Link>
               </Reveal>
             </div>
           </div>
@@ -143,9 +147,11 @@ export default function CarouselComponent() {
               </Reveal>
 
               <Reveal keyframes={fadeInLeftShorter} delay={400} duration={1200}>
-                <ALink href="/shop" className="btn btn-dark ml-1">
-                  Shop Now <i className="d-icon-arrow-right"></i>
-                </ALink>
+                <Link href="/shop">
+                  <button className="btn btn-dark ml-1">
+                    Shop Now <i className="d-icon-arrow-right"></i>
+                  </button>
+                </Link>
               </Reveal>
             </div>
           </div>
@@ -185,9 +191,11 @@ export default function CarouselComponent() {
               </Reveal>
 
               <Reveal keyframes={fadeInUpShorter} delay={500} duration={1200}>
-                <ALink href="/shop" className="btn btn-dark ml-1">
-                  Shop Now <i className="d-icon-arrow-right"></i>
-                </ALink>
+                <Link href="/shop">
+                  <button className="btn btn-dark ml-1">
+                    Shop Now <i className="d-icon-arrow-right"></i>
+                  </button>
+                </Link>
               </Reveal>
             </div>
           </div>

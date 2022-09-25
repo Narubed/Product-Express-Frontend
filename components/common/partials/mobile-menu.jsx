@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-
-import ALink from "~/components/features/custom-link";
+import Link from "next/link";
 import Card from "~/components/features/accordion/card";
 
 import { mainMenu } from "~/utils/data/menu";
 
 function MobileMenu(props) {
-  console.log("MobileMenu");
   const [search, setSearch] = useState("");
   const [timer, setTimer] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
-    console.log("MobileMenu");
     window.addEventListener("resize", hideMobileMenuHandler);
     document.querySelector("body").addEventListener("click", onBodyClick);
 
@@ -70,13 +67,15 @@ function MobileMenu(props) {
     <div className="mobile-menu-wrapper">
       <div className="mobile-menu-overlay" onClick={hideMobileMenu}></div>
 
-      <ALink className="mobile-menu-close" href="#" onClick={hideMobileMenu}>
+      {/* <Link href=""> */}
+      <a className="mobile-menu-close" onClick={hideMobileMenu}>
         <i className="d-icon-times"></i>
-      </ALink>
+      </a>
+      {/* </Link> */}
 
       <div className="mobile-menu-container scrollable">
         <form
-          action="#"
+          action="/"
           className="input-wrapper"
           onSubmit={onSubmitSearchForm}
         >
@@ -97,7 +96,9 @@ function MobileMenu(props) {
 
         <ul className="mobile-menu mmenu-anim">
           <li>
-            <ALink href="/">Home</ALink>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
           </li>
 
           <li>
@@ -107,16 +108,18 @@ function MobileMenu(props) {
                   <Card title="Variations 1" type="mobile">
                     <ul>
                       {mainMenu.shop.variation1.map((item, index) => (
-                        <li key={`shop-${item.title}`}>
-                          <ALink href={"/" + item.url}>
-                            {item.title}
-                            {item.hot ? (
-                              <span className="tip tip-hot">Hot</span>
-                            ) : (
-                              ""
-                            )}
-                          </ALink>
-                        </li>
+                        <div key={item.title}>
+                          <Link href={"/" + item.url}>
+                            <a>
+                              {item.title}
+                              {item.hot ? (
+                                <span className="tip tip-hot">Hot</span>
+                              ) : (
+                                ""
+                              )}
+                            </a>
+                          </Link>
+                        </div>
                       ))}
                     </ul>
                   </Card>
@@ -125,16 +128,18 @@ function MobileMenu(props) {
                   <Card title="Variations 2" type="mobile">
                     <ul>
                       {mainMenu.shop.variation2.map((item, index) => (
-                        <li key={`shop-${item.title}`}>
-                          <ALink href={"/" + item.url}>
-                            {item.title}
-                            {item.new ? (
-                              <span className="tip tip-new">New</span>
-                            ) : (
-                              ""
-                            )}
-                          </ALink>
-                        </li>
+                        <div key={item.title}>
+                          <Link href={"/" + item.url}>
+                            <a>
+                              {item.title}
+                              {item.new ? (
+                                <span className="tip tip-new">New</span>
+                              ) : (
+                                ""
+                              )}
+                            </a>
+                          </Link>
+                        </div>
                       ))}
                     </ul>
                   </Card>
@@ -153,18 +158,31 @@ function MobileMenu(props) {
                 <li>
                   <Card title="Product Pages" type="mobile">
                     {mainMenu.product.pages.map((item, index) => (
-                      <ALink
-                        href={"/" + item.url}
-                        key={`product-${item.title}`}
-                      >
-                        {item.title}
+                      <div key={item.title}>
+                        <Link
+                          href={"/" + item.url}
+                          key={`product-${item.title}`}
+                        >
+                          <a>
+                            {item.title}
+                            {item.hot ? (
+                              <span className="tip tip-hot">Hot</span>
+                            ) : (
+                              ""
+                            )}
+                          </a>
+                        </Link>
+                      </div>
+                    ))}
+                    {/* <Link href={"/" + item.url} key={`product-${item.title}`}>
+                        <a>{item.title}</a>
                         {item.hot ? (
                           <span className="tip tip-hot">Hot</span>
                         ) : (
                           ""
                         )}
-                      </ALink>
-                    ))}
+                      </Link>
+                    ))} */}
                   </Card>
                 </li>
 
@@ -172,16 +190,18 @@ function MobileMenu(props) {
                   <Card title="Product Layouts" type="mobile">
                     <ul>
                       {mainMenu.product.layout.map((item, index) => (
-                        <li key={`product-${item.title}`}>
-                          <ALink href={"/" + item.url}>
-                            {item.title}
-                            {item.new ? (
-                              <span className="tip tip-new">New</span>
-                            ) : (
-                              ""
-                            )}
-                          </ALink>
-                        </li>
+                        <div key={`product-${item.title}`}>
+                          <Link href={"/" + item.url}>
+                            <a>
+                              {item.title}
+                              {item.new ? (
+                                <span className="tip tip-new">New</span>
+                              ) : (
+                                ""
+                              )}
+                            </a>
+                          </Link>
+                        </div>
                       ))}
                     </ul>
                   </Card>
@@ -194,56 +214,60 @@ function MobileMenu(props) {
             <Card title="Pages" type="mobile" url="/pages/about-us">
               <ul>
                 {mainMenu.other.map((item, index) => (
-                  <li key={`other-${item.title}`}>
-                    <ALink href={"/" + item.url}>
-                      {item.title}
-                      {item.new ? <span className="tip tip-new">New</span> : ""}
-                    </ALink>
-                  </li>
+                  <div key={`other-${item.title}`}>
+                    <Link href={"/" + item.url}>
+                      <a>
+                        {item.title}
+                        {item.new && <span className="tip tip-new">New</span>}
+                      </a>
+                    </Link>
+                  </div>
                 ))}
               </ul>
             </Card>
           </li>
 
-          {/* <li>
-                        <Card title="Blog" type="mobile" url="/blog/classic">
-                            <ul>
-                                {
-                                    mainMenu.blog.map( ( item, index ) => (
-                                        item.subPages ?
-                                            <li key={ "blog" + item.title }>
-                                                <Card title={ item.title } url={ '/' + item.url } type="mobile">
-                                                    <ul>
-                                                        {
-                                                            item.subPages.map( ( item, index ) => (
-                                                                <li key={ `blog-${ item.title }` }>
-                                                                    <ALink href={ '/' + item.url }>
-                                                                        { item.title }
-                                                                    </ALink>
-                                                                </li>
-                                                            ) )
-                                                        }
-                                                    </ul>
-                                                </Card>
-                                            </li> :
-
-                                            <li key={ "blog" + item.title } className={ item.subPages ? "submenu" : "" }>
-                                                <ALink href={ '/' + item.url }>
-                                                    { item.title }
-                                                </ALink>
-                                            </li>
-                                    ) )
-                                }
-                            </ul>
-                        </Card>
-                    </li> */}
+          <li>
+            <Card title="Blog" type="mobile" url="/blog/classic">
+              <ul>
+                {mainMenu.blog.map((item, index) =>
+                  item.subPages ? (
+                    <li key={"blog" + item.title}>
+                      <Card
+                        title={item.title}
+                        url={"/" + item.url}
+                        type="mobile"
+                      >
+                        <ul>
+                          {item.subPages.map((item, index) => (
+                            <li key={`blog-${item.title}`}>
+                              <Link href={"/" + item.url}>{item.title}</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </Card>
+                    </li>
+                  ) : (
+                    <li
+                      key={"blog" + item.title}
+                      className={item.subPages ? "submenu" : ""}
+                    >
+                      <Link href={"/" + item.url}>{item.title}</Link>
+                    </li>
+                  )
+                )}
+              </ul>
+            </Card>
+          </li>
 
           <li>
             <Card title="elements" type="mobile" url="/elements">
               <ul>
                 {mainMenu.element.map((item, index) => (
                   <li key={`elements-${item.title}`}>
-                    <ALink href={"/" + item.url}>{item.title}</ALink>
+                    <Link href={"/" + item.url}>
+                      <a>{item.title}</a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -251,7 +275,7 @@ function MobileMenu(props) {
           </li>
 
           <li>
-            <ALink href="#">Buy Riode!</ALink>
+            <Link href="/">Buy Riode!</Link>
           </li>
         </ul>
       </div>

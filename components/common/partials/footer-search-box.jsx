@@ -3,8 +3,7 @@ import { useRouter } from "next/router";
 // import { useLazyQuery } from '@apollo/react-hooks';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import ALink from "~/components/features/custom-link";
-
+import Link from "next/link";
 // import { GET_PRODUCTS } from "~/server/queries";
 // import withApollo from "~/server/apollo";
 
@@ -139,19 +138,22 @@ function SearchForm() {
           {search.length > 2 &&
             data &&
             data.products.data.map((product, index) => (
-              <ALink
+              <Link
                 href={`/product/default/${product.slug}`}
-                className="autocomplete-suggestion"
                 key={`search-result-${index}`}
               >
-                <LazyLoadImage
-                  src={
-                    process.env.NEXT_PUBLIC_ASSET_URI + product.pictures[0].url
-                  }
-                  width={40}
-                  height={40}
-                  alt="product"
-                />
+                <button className="autocomplete-suggestion">
+                  <LazyLoadImage
+                    src={
+                      process.env.NEXT_PUBLIC_ASSET_URI +
+                      product.pictures[0].url
+                    }
+                    width={40}
+                    height={40}
+                    alt="product"
+                  />
+                </button>
+
                 <div
                   className="search-name"
                   dangerouslySetInnerHTML={removeXSSAttacks(
@@ -182,7 +184,7 @@ function SearchForm() {
                     </span>
                   )}
                 </span>
-              </ALink>
+              </Link>
             ))}
         </div>
       </form>

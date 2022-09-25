@@ -1,9 +1,8 @@
 import React from "react";
 import Reveal from "react-awesome-reveal";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
+import Link from "next/link";
 // import Custom Components
-import ALink from "~/components/features/custom-link";
 import {
   fadeIn,
   fadeInUpShorter,
@@ -39,15 +38,16 @@ export default function componentName() {
                   Starting at $29
                 </h4>
                 <hr className="bg-grey" />
-                <ALink
+                <Link
                   href={{
                     pathname: "/shop",
                     query: { category: "for-men-s" },
                   }}
-                  className="btn btn-link btn-underline p-0"
                 >
-                  Shop Now<i className="d-icon-arrow-right"></i>
-                </ALink>
+                  <button className="btn btn-link btn-underline p-0">
+                    Shop Now<i className="d-icon-arrow-right"></i>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -78,12 +78,11 @@ export default function componentName() {
                 Use code <strong className="text-white">BLKFRI40</strong> at
                 checkout.
               </p>
-              <ALink
-                href="/shop"
-                className="btn btn-primary btn-outline text-white"
-              >
-                Shop Now <i className="d-icon-arrow-right ml-1"></i>
-              </ALink>
+              <Link href="/shop">
+                <button className="btn btn-primary btn-outline text-white">
+                  Shop Now <i className="d-icon-arrow-right ml-1"></i>
+                </button>
+              </Link>
             </div>
           </div>
         </Reveal>
@@ -114,15 +113,16 @@ export default function componentName() {
                 Starting at $29
               </h4>
               <hr className="bg-grey" />
-              <ALink
+              <Link
                 href={{
                   pathname: "/shop",
                   query: { category: "for-women-s" },
                 }}
-                className="btn btn-link btn-underline p-0"
               >
-                Shop Now<i className="d-icon-arrow-right"></i>
-              </ALink>
+                <button className="btn btn-link btn-underline p-0">
+                  Shop Now<i className="d-icon-arrow-right"></i>
+                </button>
+              </Link>
             </div>
           </div>
         </Reveal>

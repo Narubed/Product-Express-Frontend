@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import Radium, { StyleRoot } from "radium";
-import DisCar from "./disCar";
-function Discount() {
+import DisCar from "./components/disCar";
+import { Carousel } from "@trendyol-js/react-carousel";
+export default function Discount() {
   const [isDesktop, setIsDesktop] = useState(false);
   function MediaQuery() {
     {
@@ -15,9 +15,7 @@ function Discount() {
       }, [isDesktop]);
 
       return (
-        <div className="App">
-          {isDesktop ? <DisCar show={5.5} /> : <DisCar show={2.5} />}
-        </div>
+        <div>{isDesktop ? <DisCar show={5.5} /> : <DisCar show={2.5} />}</div>
       );
     }
   }
@@ -51,13 +49,9 @@ function Discount() {
           </button>
         </div>
       </div>
-      {/* <StyleRoot> */}
       <div className="App">
         <MediaQuery />
       </div>
-      {/* </StyleRoot> */}
     </div>
   );
 }
-
-export default Discount;
