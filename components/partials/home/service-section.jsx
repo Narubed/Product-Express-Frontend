@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Reveal from "react-awesome-reveal";
 import { Icon } from "@iconify/react";
 
@@ -8,7 +8,35 @@ import "react-multi-carousel/lib/styles.css";
 import { serviceSlider } from "~/utils/data/carousel";
 import { fadeInUpShorter } from "~/utils/data/keyframes";
 
+import { useSelector, useDispatch } from "react-redux";
+import UseLanguage from "~/lib/hook/useLanguage";
+
+import {
+  Thai,
+  Eng,
+  Cambodia,
+  Myanmar,
+  Laos,
+  China,
+} from "~/lib/language-pages/components/partials/home/service-section";
+
 function ServiceBox(props) {
+  const language = useSelector((state) => state.language.language);
+  const [storeLanguage, setLanguage] = useState({});
+
+  useEffect(() => {
+    const checkLanguage = UseLanguage({
+      Thai,
+      Eng,
+      Cambodia,
+      Myanmar,
+      Laos,
+      language,
+      China,
+    });
+    setLanguage(checkLanguage);
+  }, [language]);
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -52,10 +80,11 @@ function ServiceBox(props) {
                 />
                 <div className="icon-box-content mb-1 text-center">
                   <h4 className="icon-box-title mb-1 text-normal">
-                    Free Shipping &amp; Return
+                    {storeLanguage?.FreeShipping}
+                    {/* Free Shipping &amp; Return */}
                   </h4>
                   <p className="font-primary text-grey">
-                    Get free delivery of your orders all over the world.
+                    {storeLanguage?.FreeShippingDetail}
                   </p>
                 </div>
               </div>
@@ -71,10 +100,10 @@ function ServiceBox(props) {
                 />
                 <div className="icon-box-content mb-1 text-center">
                   <h4 className="icon-box-title mb-1 text-normal">
-                    Customer Support 24/7
+                    {storeLanguage?.Customer}
                   </h4>
                   <p className="font-primary text-grey">
-                    We provide conveninet support of 24/7 for our customers.
+                    {storeLanguage?.CustomerDetail}
                   </p>
                 </div>
               </div>
@@ -90,10 +119,10 @@ function ServiceBox(props) {
                 />
                 <div className="icon-box-content mb-1 text-center">
                   <h4 className="icon-box-title mb-1 text-normal">
-                    Moneyback Guarantee
+                    {storeLanguage?.Moneyback}
                   </h4>
                   <p className="font-primary text-grey">
-                    We fully guarantee our money back policy with no doubt.
+                    {storeLanguage?.MoneybackDetail}
                   </p>
                 </div>
               </div>
@@ -101,13 +130,18 @@ function ServiceBox(props) {
                 className="icon-box icon-box-side icon-box-side-1 flex-column"
                 style={{ margin: 6 }}
               >
-                <Icon icon="ps:sale-tag" color="#8A2BE2" width="52" height="52" />
+                <Icon
+                  icon="ps:sale-tag"
+                  color="#8A2BE2"
+                  width="52"
+                  height="52"
+                />
                 <div className="icon-box-content mb-1 text-center">
                   <h4 className="icon-box-title mb-1 text-normal">
-                    20% Off Your First Order
+                    {storeLanguage?.GifPoint}
                   </h4>
                   <p className="font-primary text-grey">
-                    Get our first gift - 20% off for your first ordered product.
+                    {storeLanguage?.GifPointDetail}
                   </p>
                 </div>
               </div>

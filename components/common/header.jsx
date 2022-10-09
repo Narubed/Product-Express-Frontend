@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import { Box, MenuItem, Stack, IconButton } from "@mui/material";
+import LanguagePopover from "~/components/common/menuLanguage/LanguagePopover";
 
 import CartMenu from "~/components/common/partials/cart-menu";
 import MainMenu from "~/components/common/partials/main-menu";
@@ -63,19 +65,19 @@ export default function Header(props) {
           <div className="header-right">
             {/* <SearchBox adClass="d-lg-none mr-4" /> */}
 
-            <a href="tel:#" className="call d-lg-show mr-4">
+            <a href="tel:0800000000" className="call d-lg-show mr-4">
               <div className="icon-box-icon">
                 <i className="d-icon-phone"></i>
               </div>
               <div className="icon-box-content">
-                <span>(800) 414-1769</span>
+                <span>(083) 080-0000</span>
               </div>
             </a>
 
             <span className="divider"></span>
 
             {/* <LoginModal /> */}
-
+           
             <Link href="/pages/wishlist">
               <a className="wishlist mr-4">
                 <i className="d-icon-heart"></i>
@@ -83,6 +85,7 @@ export default function Header(props) {
             </Link>
 
             <CartMenu />
+            <LanguagePopover />
           </div>
         </div>
       </div>

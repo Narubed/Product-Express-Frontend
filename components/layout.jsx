@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import Header from "~/components/common/header";
 import Footer from "~/components/common/footer";
 import MobileMenu from "~/components/common/partials/mobile-menu";
-
+import { Icon } from "@iconify/react";
 import {
   showScrollTopHandler,
   scrollTopHandler,
@@ -61,6 +61,7 @@ export default function componentName({ children, closeQuickview }) {
         <Footer />
       </div>
       <button
+        style={{ background: "purple", cursor: "pointer" }}
         id="scroll-top"
         href="#"
         title="Top"
@@ -68,8 +69,7 @@ export default function componentName({ children, closeQuickview }) {
         className="scroll-top"
         onClick={() => scrollTopHandler(false)}
       >
-        <i className="d-icon-arrow-up"></i>
-        11
+        <Icon icon="el:arrow-up" color="#FFFFFF" />
       </button>
 
       <MobileMenu />
