@@ -355,38 +355,35 @@ export const introSlider = {
     autoplay: false
 }
 
-export const categorySlider = {
-    items: 5,
-    nav: true,
-    dots: false,
-    margin: 10,
-    loop: false,
-    responsive: {
-        0: {
-            items: 1
-        },
-        576: {
-            items: 2
-        },
-        768: {
-            items: 3
-        },
-        992: {
-            items: 4
-        },
-        1200: {
-            items: 5
-        }
-    }
-}
-
-export const productSlider = {
-    items: 6,
-    nav: false,
-    dots: true,
-    autoplay: false,
-    loop: false,
+export const serviceSlider = {
     margin: 20,
+    nav: false,
+    dots: false,
+    responsive: {
+        992: {
+            items: 3
+        },
+        768: {
+            items: 2
+        },
+        576: {
+            items: 2
+        },
+        0: {
+            items: 1
+        },
+        1200: {
+            items: 4
+        }
+    }
+}
+
+export const brandSlider = {
+    items: 7,
+    loop: false,
+    autoplay: true,
+    dots: false,
+    nav: false,
     responsive: {
         0: {
             items: 2
@@ -398,40 +395,19 @@ export const productSlider = {
             items: 4
         },
         992: {
-            items: 5,
-            dots: false
+            items: 6
         },
         1200: {
-            items: 6,
-            dots: false
-        }
-    }
-}
-
-export const bannerSlider = {
-    items: 2,
-    nav: false,
-    dots: true,
-    autoplay: true,
-    loop: false,
-    margin: 10,
-    responsive: {
-        0: {
-            items: 1
-        },
-        992: {
-            items: 2
+            items: 7
         }
     }
 }
 
 export const instagramSlider = {
     items: 6,
-    nav: false,
-    dots: false,
-    autoplay: true,
     loop: false,
-    margin: 0,
+    dots: false,
+    nav: false,
     responsive: {
         0: {
             items: 2
@@ -447,6 +423,53 @@ export const instagramSlider = {
         },
         1200: {
             items: 6
+        }
+    }
+}
+
+export const productSlider = {
+    items: 5,
+    nav: false,
+    dots: true,
+    autoplay: false,
+    loop: false,
+    margin: 20,
+    responsive: {
+        0: {
+            items: 2
+        },
+        768: {
+            items: 3
+        },
+        992: {
+            items: 4,
+            dots: false,
+            nav: true
+        }
+    }
+}
+
+export const productSlider2 = {
+    items: 5,
+    nav: false,
+    dots: true,
+    autoplay: false,
+    loop: false,
+    margin: 20,
+    responsive: {
+        0: {
+            items: 2
+        },
+        768: {
+            items: 3
+        },
+        992: {
+            items: 4
+        },
+        1200: {
+            items: 5,
+            dots: false,
+            nav: true
         }
     }
 }

@@ -67,67 +67,67 @@ export const mainMenu = {
         "pages": [
             {
                 "title": "Simple Product",
-                "url": "product/default/awesome-computer-bag"
+                "url": "product/default/a-sporting-uniform"
             },
             {
                 "title": "Variable Product",
-                "url": "product/default/awesome-computer-bag"
+                "url": "product/default/modern-north-sportwear"
             },
             {
                 "title": "Sale Product",
-                "url": "product/default/beyond-riode-original-backpack"
+                "url": "product/default/blue-roller-skates"
             },
             {
                 "title": "Feature & On Sale",
-                "url": "product/default/beyond-riode-original-backpack"
+                "url": "product/default/a-pair-of-dumbbells"
             },
             {
                 "title": "With Left Sidebar",
-                "url": "product/left-sidebar/awesome-computer-bag"
+                "url": "product/left-sidebar/modern-north-sportwear"
             },
             {
                 "title": "With Right Sidebar",
-                "url": "product/right-sidebar/awesome-computer-bag"
+                "url": "product/right-sidebar/modern-north-sportwear"
             },
             {
                 "title": "Add Cart Sticky",
-                "url": "product/sticky-cart/awesome-computer-bag",
+                "url": "product/sticky-cart/modern-north-sportwear",
                 "hot": true
             },
             {
                 "title": "Tab Inside",
-                "url": "product/tab-inside/awesome-computer-bag"
+                "url": "product/tab-inside/modern-north-sportwear"
             }
         ],
         "layout": [
             {
                 "title": "Grid Images",
-                "url": "product/grid/awesome-computer-bag",
+                "url": "product/grid/modern-north-sportwear",
                 "new": true
             },
             {
                 "title": "Masonry",
-                "url": "product/masonry/awesome-computer-bag"
+                "url": "product/masonry/blue-ski-boots"
             },
             {
                 "title": "Gallery Type",
-                "url": "product/gallery/awesome-computer-bag"
+                "url": "product/gallery/modern-north-sportwear"
             },
             {
                 "title": "Full Width Layout",
-                "url": "product/full-width/awesome-computer-bag"
+                "url": "product/full-width/modern-north-sportwear"
             },
             {
                 "title": "Sticky Info",
-                "url": "product/sticky-info/awesome-computer-bag"
+                "url": "product/sticky-info/modern-north-sportwear"
             },
             {
                 "title": "Left & Right Sticky",
-                "url": "product/sticky-both/awesome-computer-bag"
+                "url": "product/sticky-both/modern-north-sportwear"
             },
             {
                 "title": "Horizontal Thumb",
-                "url": "product/horizontal/awesome-computer-bag"
+                "url": "product/horizontal/modern-north-sportwear"
             },
             {
                 "title": "Build Your Own",
@@ -364,4 +364,30 @@ export const elementsList = [
         "class": "element-video",
         "title": "Notification"
     }
+]
+
+export const headerBorderRemoveList = [
+    "/",
+    "/shop",
+    "/shop/infinite-scroll",
+    "/shop/horizontal-filter",
+    "/shop/navigation-filter",
+    "/shop/off-canvas-filter",
+    "/shop/right-sidebar",
+    "/shop/grid/[grid]",
+    "/elements",
+    "/elements/products",
+    "/elements/typography",
+    "/elements/titles",
+    "/elements/product-category",
+    "/elements/buttons",
+    "/elements/accordions",
+    "/elements/alerts",
+    "/elements/tabs",
+    "/elements/testimonials",
+    "/elements/blog-posts",
+    "/elements/instagrams",
+    "/elements/cta",
+    "/elements/icon-boxes",
+    "/elements/icons"
 ]

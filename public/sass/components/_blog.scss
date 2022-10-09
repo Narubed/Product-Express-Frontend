@@ -86,6 +86,12 @@
         )
     )
 );
+@include mq(lg, max) {
+    .blog-sidebar-wrapper {
+        z-index: 1200;
+    }
+}
+
 // Default
 .post {
     @include print_css( post );
@@ -262,8 +268,7 @@
             img {
                 visibility: hidden;
             }
-        }
-    }
+        }    }
     &.paused {
         .video-play {
             opacity: 1;
@@ -278,8 +283,7 @@
         .video-play:before {
             content: '\f28b';
         }
-    }
-}
+    }}
 
 
 // List

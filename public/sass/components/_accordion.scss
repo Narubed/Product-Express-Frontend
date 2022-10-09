@@ -45,6 +45,10 @@
 
 	.expanded {
 		color: $primary-color;
+
+		&::after {
+			color: $primary-color;
+		}
 	}
 }
 

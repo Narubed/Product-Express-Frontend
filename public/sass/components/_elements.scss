@@ -64,7 +64,7 @@ $elements : (accordian, banner, blog, button, cta, icon-box, portfolio, category
     .element-img {
         width: 90px;
         height: 70px;
-        background-image: url(../../images/elements.png);
+        background-image: url(https://d-themes.com/react/riode/demo-sport/images/elements.png);
         background-repeat: no-repeat;
         transition: opacity .3s, visibility .3s;
     }
@@ -75,7 +75,7 @@ $elements : (accordian, banner, blog, button, cta, icon-box, portfolio, category
         height: 70px;
         left: 50%;
         top: 1.2rem;
-        background-image: url(../../images/elements.png);
+        background-image: url(https://d-themes.com/react/riode/demo-sport/images/elements.png);
         transform: translateX(-50%);
         visibility: hidden;
         opacity: 0;

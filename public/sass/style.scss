@@ -14,6 +14,10 @@
 /* 1. config */
 @import 'config/variables';
 
+// Color
+$primary-color: #8A2BE2;
+$secondary-color: #FF7C12;
+
 /* 2. mixins */
 @import 'mixins/breakpoints'; 
 @import 'mixins/core';
@@ -24,6 +28,7 @@
 @import 'components/nouislider';
 
 /* 4. base */
+@import 'demo/demo_sport_config';
 
 @import 'base/base';
 @import 'base/helper';
@@ -31,8 +36,6 @@
 @import 'base/layout';
 @import 'base/grid';
 @import 'base/spacing';
-
-@import 'demo/demo19_config';
 
 /* 5, components */
 @import 'components/accordion';
@@ -104,4 +107,4 @@
 @import 'pages/icons';
 @import 'pages/faq';
 
-@import 'demo/demo19_custom';
+@import 'demo/demo_sport_custom';

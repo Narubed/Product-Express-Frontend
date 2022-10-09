@@ -1,12 +1,32 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
-// import CartMenu from "~/components/common/partials/cart-menu";
-import MainMenu from "~/components/common/partials/main-menu";
-// import SearchBox from "~/components/common/partials/search-box";
-// import LoginModal from '~/components/features/modals/login-modal';
-import LanguagePopover from "~/components/common/menuLanguage/LanguagePopover";
 import Image from "next/image";
-import Logo from "~/public/images/home/logo.png";
+import { Icon } from "@iconify/react";
+
+import CartMenu from "~/components/common/partials/cart-menu";
+import MainMenu from "~/components/common/partials/main-menu";
+// import SearchBox from '~/components/common/partials/search-box';
+// import LoginModal from "~/components/features/modals/login-modal";
+
+import { headerBorderRemoveList } from "~/utils/data/menu";
+
 export default function Header(props) {
+  const router = useRouter();
+
+  useEffect(() => {
+    let header = document.querySelector("header");
+    if (header) {
+      if (headerBorderRemoveList.includes(router.pathname))
+        header.classList.add("header-transparent");
+      else if (
+        !headerBorderRemoveList.includes(router.pathname) &&
+        header.classList.contains("header-transparent")
+      )
+        document.querySelector("header").classList.remove("header-transparent");
+    }
+  }, [router.pathname]);
+
   const showMobileMenu = () => {
     document.querySelector("body").classList.add("mmenu-active");
   };
@@ -14,43 +34,55 @@ export default function Header(props) {
   return (
     <header className="header">
       <div className="header-middle sticky-header fix-top sticky-content">
-        <div className="container-fluid">
+        <div className="container">
           <div className="header-left">
             <Link href="#">
               <a className="mobile-menu-toggle" onClick={showMobileMenu}>
-                <i className="d-icon-bars2"></i>
+                <Icon icon="fontisto:nav-icon-list-a" />
               </a>
             </Link>
 
             <Link href="/">
-              <a style={{paddingRight: '10px'}}>
+              <a className="logo">
                 <Image
-                  className="logo"
-                  src={Logo.src}
+                  src="https://d-themes.com/react/riode/demo-sport/images/home/logo-footer.png"
                   alt="logo"
-                  width="153"
-                  height="44"
+                  width="154"
+                  height="43"
                 />
               </a>
             </Link>
 
             <MainMenu />
+
+            <span className="divider d-lg-show"></span>
+
+            {/* <SearchBox adClass="d-lg-show" /> */}
           </div>
 
-          <div className="header-center"></div>
-
           <div className="header-right">
-            {/* <SearchBox /> */}
+            {/* <SearchBox adClass="d-lg-none mr-4" /> */}
+
+            <a href="tel:#" className="call d-lg-show mr-4">
+              <div className="icon-box-icon">
+                <i className="d-icon-phone"></i>
+              </div>
+              <div className="icon-box-content">
+                <span>(800) 414-1769</span>
+              </div>
+            </a>
+
+            <span className="divider"></span>
 
             {/* <LoginModal /> */}
-            <LanguagePopover />
+
             <Link href="/pages/wishlist">
-              <div className="wishlist mr-4 d-lg-show">
+              <a className="wishlist mr-4">
                 <i className="d-icon-heart"></i>
-              </div>
+              </a>
             </Link>
 
-            {/* <CartMenu /> */}
+            <CartMenu />
           </div>
         </div>
       </div>

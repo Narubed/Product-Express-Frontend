@@ -79,13 +79,6 @@
         }
     }
 }
-
-.wishlist-empty {
-    font-size: 10rem;
-    color: #d3d3d4;
-    margin-bottom: 2rem;
-}
-
 @include mq('md') {
     .wishlist-table {
         // td.product-price {

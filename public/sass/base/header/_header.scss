@@ -668,14 +668,6 @@
     .product-price {
         margin-bottom: 0;
     }
-
-    &.scrollable {
-        &::-webkit-scrollbar {
-            height: 7px;
-            width: 4px;
-            background: #f4f4f4;
-        }
-    }
 }
 
 .dir-up .live-search-list {
@@ -683,11 +675,11 @@
     bottom: calc(100% + 3px);
 }
 
-// .header .header-search {
-//     .search-toggle{
-//         display: inline;
-//     }
-// }
+.header .header-search {
+    .search-toggle{
+        display: inline;
+    }
+}
 
 .header-search.show-results .live-search-list {
 	display: block;
@@ -869,13 +861,13 @@
 
 // Responsive
 @include mq('xl', 'max') {
-    // .main-nav {
-    //     .menu {
-    //         > li {
-    //             margin-right: 1.5rem;
-    //         }
-    //     }
-    // }
+    .main-nav {
+        .menu {
+            > li {
+                margin-right: 1.5rem;
+            }
+        }
+    }
     .header-middle {
         .logo {
             @include css( margin-right, header, middle, logo, _mobile-margin-right );

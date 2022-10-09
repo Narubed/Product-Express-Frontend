@@ -178,7 +178,7 @@
     &:not(.pure-media)::before {
         content: '';
         display: block;
-        padding-top: calc( 900% / 8 );
+        padding-top: calc( 338% / 3 );
         background-color: #f4f4f4;
     }
 
@@ -249,11 +249,11 @@
     // flex-direction: column;
     position: absolute;
     left: 2rem;
-    top: 2rem;
-    max-width: 9rem;
+    top: 1.8rem;
+    max-width: 10rem;
 }
 .product-label {
-    display: inline-block;
+    display: block;
     text-align: center;
     @include print_css( product, label );
 
@@ -291,7 +291,7 @@
     
     &.btn-wishlist i {
         margin-top: .3rem;
-        margin-left: .1rem;
+        // margin-left: .1rem;
     }
 
     &:hover {
@@ -626,7 +626,7 @@
 
 .product-media .btn-product-icon.btn-cart i {
     margin-top: 2px;
-    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .product:hover {

@@ -111,7 +111,7 @@ export const stickyHeaderHandler = function () {
         height = stickyHeader.offsetHeight;
     }
 
-    if ( window.pageYOffset >= top && window.innerWidth >= 992 ) {
+    if ( window.pageYOffset > top && window.innerWidth >= 992 ) {
         if ( stickyHeader ) {
             stickyHeader.classList.add( 'fixed' );
             if ( !document.querySelector( '.sticky-wrapper' ) ) {
@@ -136,11 +136,10 @@ export const stickyHeaderHandler = function () {
         }
     }
 
-    // if ( window.outerWidth >= 992 && document.querySelector( 'body' ).classList.contains( 'right-sidebar-active' ) ) {
-    //     document.querySelector( 'body' ).classList.remove( 'right-sidebar-active' );
-    // }
+    if ( window.outerWidth >= 992 && document.querySelector( 'body' ).classList.contains( 'right-sidebar-active' ) ) {
+        document.querySelector( 'body' ).classList.remove( 'right-sidebar-active' );
+    }
 }
-
 
 /**
  * Add or remove settings when the window is resized
@@ -231,7 +230,7 @@ export const showScrollTopHandler = function () {
 /**
  * utils to scroll to top
  */
-export function scrollTopHandler( isCustom = true, speed = 15 ) {
+export function scrollTopHandler ( isCustom = true, speed = 15 ) {
     let offsetTop = 0;
 
     if ( isCustom && !isEdgeBrowser() ) {

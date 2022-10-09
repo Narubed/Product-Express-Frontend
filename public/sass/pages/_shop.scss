@@ -160,7 +160,8 @@
 
     &::before {
         right: 1.25em;
-        font-size: 1rem;
+        font-size: 1.2rem;
+        margin-top: 1px;
     }
 
     ul, ul::before {
@@ -831,13 +832,13 @@
             display: none;
             position: absolute;
             right: 0;
-            top: -50px;
+            top: -40px;
         }
     }
 }
 @include mq(xl) {
     .select-menu:not(:last-child):not(.toolbox-show) {
-        margin-right: 1.8rem;
+        margin-right: 2rem;
     }
     .toolbox .shop-sidebar { margin-right: 2rem }
 }

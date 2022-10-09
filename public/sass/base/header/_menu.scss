@@ -254,6 +254,7 @@
             > ul,
             .megamenu {
                 top: 100%;
+                z-index: 1201;
             }
             // &::after {
             //     visibility: visible;
@@ -636,7 +637,7 @@
         border-color: transparent;
     }
     .nav-item.show .nav-link,
-    .nav-item.active .nav-link{
+    .nav-item .nav-link.active {
         color: $primary-color;
         border-color: $primary-color;
     }

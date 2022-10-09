@@ -360,7 +360,6 @@
     }
 
     .products {
-        // max-height: calc(100vh - 29rem);
         overflow-x: hidden;
         margin-right: -5px;
         padding-right: 5px;
@@ -411,8 +410,13 @@
             font-size: 1.1rem;
             line-height: 1.8rem;
         }
-        .dropdown-box .products.scrollable {
-            max-height: 280px;
+        .products { 
+            max-height: 20rem;
+        }
+    }
+    &.cart-offcanvas {
+        .products {
+            max-height: calc(100vh - 29rem);
         }
     }
     &.type3 {
@@ -444,9 +448,6 @@
             transform: none;
             z-index: 2999;
             box-shadow: none;
-        }
-        .dropdown-box .products.scrollable {
-            max-height: calc(100vh - 260px);
         }
         .cart-overlay {
             position: fixed;
