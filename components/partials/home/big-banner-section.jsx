@@ -18,7 +18,7 @@ function BigBannerSection(props) {
     <section
       className="banner-big-section"
       style={{
-        backgroundImage: "url(images/home/bg.jpg)",
+        backgroundImage: "url(https://d-themes.com/react/riode/demo-sport/images/home/bg.jpg)",
         backgroundColor: "#333",
       }}
     >
