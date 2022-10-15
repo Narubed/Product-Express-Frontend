@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-
 import { mainMenu } from "~/utils/data/menu";
 import { Icon } from "@iconify/react";
 
@@ -20,6 +19,7 @@ import {
 function MainMenu() {
   const pathname = useRouter().pathname;
   const language = useSelector((state) => state.language.language);
+
   const [storeLanguage, setLanguage] = useState({});
 
   useEffect(() => {
@@ -44,8 +44,8 @@ function MainMenu() {
           </Link>
         </li>
 
-        <li className={`${pathname.includes("/products") ? "active" : ""}`}>
-          <Link href="/products">
+        <li className={`${pathname.includes("/shop") ? "active" : ""}`}>
+          <Link href="/shop">
             <a style={{ display: "flex", alignItems: "center" }}>
               {storeLanguage?.Products}
               <Icon icon="dashicons:arrow-down-alt2" width="14" height="14" />

@@ -7,6 +7,7 @@ const nextConfig = {
       "d-themes.com",
       "localhost",
       "product-express.nbadigitalservice.com",
+      "192.168.1.23"
     ],
   },
   // eslint: {

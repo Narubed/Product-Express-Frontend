@@ -5,16 +5,18 @@ import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { Box, MenuItem, Stack, IconButton } from "@mui/material";
 import LanguagePopover from "~/components/common/menuLanguage/LanguagePopover";
-
+import useCurrentUser from "@/lib/hook/useCurrentUser";
 import CartMenu from "~/components/common/partials/cart-menu";
 import MainMenu from "~/components/common/partials/main-menu";
 // import SearchBox from '~/components/common/partials/search-box';
 // import LoginModal from "~/components/features/modals/login-modal";
+import LoginModal from "~/components/features/modals/login-modal";
 
 import { headerBorderRemoveList } from "~/utils/data/menu";
 
 export default function Header(props) {
   const router = useRouter();
+  const { currentUser, logout } = useCurrentUser();
 
   useEffect(() => {
     let header = document.querySelector("header");
@@ -76,16 +78,15 @@ export default function Header(props) {
 
             <span className="divider"></span>
 
-            {/* <LoginModal /> */}
-           
             <Link href="/pages/wishlist">
               <a className="wishlist mr-4">
                 <i className="d-icon-heart"></i>
               </a>
             </Link>
+            {currentUser && <CartMenu />}
 
-            <CartMenu />
             <LanguagePopover />
+            <LoginModal />
           </div>
         </div>
       </div>

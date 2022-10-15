@@ -7,7 +7,8 @@ import ServiceBox from "~/components/partials/home/service-section";
 import BannerSection from "@/components/partials/home/banner-section";
 import ContactSection from "~/components/partials/home/contact-section";
 import NewCollection from "@/components/partials/home/new-collection";
-import BigBannerSection from '~/components/partials/home/big-banner-section';
+import BigBannerSection from "~/components/partials/home/big-banner-section";
+import NewsletterModal from '~/components/features/modals/newsletter-modal';
 
 export default function Home() {
   return (
@@ -28,12 +29,16 @@ export default function Home() {
 
         {/* <FeaturedCollection products={ products } loading={ loading } /> */}
         <BigBannerSection />
+
+       
+
         {/* <SmallCollection featured={ featured } bestSelling={ bestSelling } topRated={ topRated } loading={ loading } /> */}
         {/* <InstagramSection /> */}
         <ContactSection />
+        
       </div>
 
-      {/* <NewsletterModal /> */}
+      <NewsletterModal />
     </div>
   );
 }

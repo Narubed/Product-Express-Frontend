@@ -407,6 +407,9 @@
 .btn-dark {
     @include button-variant($dark-color);
 }
+.btn-error {
+    @include button-variant($error-color);
+}
 
 .btn-white {
     color: $dark-color;

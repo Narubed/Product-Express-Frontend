@@ -35,8 +35,6 @@ function BestCollection(props) {
     setLanguage(checkLanguage);
   }, [language]);
 
-  console.log(loading);
-
   useEffect(() => {
     searchProduct();
   }, []);
@@ -45,10 +43,20 @@ function BestCollection(props) {
     const products = await axios(
       `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/products`
     );
+    const brands = await axios(
+      `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/brand`
+    );
     const filterNew = products.data.data.filter(
       (item) => item.product_tag === "New"
     );
-    setProducts(filterNew);
+    const productPustBrand = [];
+    filterNew.forEach((element) => {
+      const idx = brands?.data?.data.find(
+        (item) => item._id === element.product_brand_id
+      );
+      productPustBrand.push({ ...element, brand_name: idx.brand_name });
+    });
+    setProducts(productPustBrand);
     setLoading(false);
   };
 
