@@ -1,8 +1,8 @@
 import React from "react";
 import Reveal from "react-awesome-reveal";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
-
+import BGBigBanner from "~/public/images/pages/banner/รูป3-png-01.png";
+import BigBanner from "~/public/images/pages/banner/รูป3-png-02.png";
 
 // import Custom Components
 import Link from "next/link";
@@ -10,15 +10,14 @@ import Link from "next/link";
 import BrandSection from "./brand-section";
 
 import { fadeInRightShorter } from "~/utils/data/keyframes";
+import Image from "next/image";
 
 function BigBannerSection(props) {
-
-
   return (
     <section
       className="banner-big-section"
       style={{
-        backgroundImage: "url(https://d-themes.com/react/riode/demo-sport/images/home/bg.jpg)",
+        backgroundImage: `url(${BGBigBanner.src})`,
         backgroundColor: "#333",
       }}
     >
@@ -39,8 +38,8 @@ function BigBannerSection(props) {
           </svg>
         </div>
       </div>
-      <BrandSection />
-      <div className="container">
+      {/* <BrandSection /> */}
+      <div className="container" style={{ paddingTop: 80, paddingBottom: 60 }}>
         <div className="banner-content">
           <div className="row">
             <div className="col-md-6">
@@ -73,12 +72,18 @@ function BigBannerSection(props) {
                 duration={1000}
                 triggerOnce
               >
-                <LazyLoadImage
-                  src="https://d-themes.com/react/riode/demo-sport/images/home/shoes.png"
+                {/* <LazyLoadImage
+                  src={BigBanner.src}
                   className="banner-image mt-2"
                   alt="Shoes"
                   width="698"
                   height="401"
+                /> */}
+                <Image
+                  src={BigBanner.src}
+                  width="698"
+                  height="421"
+                  alt="Shoes"
                 />
               </Reveal>
             </div>
@@ -89,4 +94,4 @@ function BigBannerSection(props) {
   );
 }
 
-export default React.memo(BigBannerSection);
+export default BigBannerSection;

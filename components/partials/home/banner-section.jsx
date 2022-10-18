@@ -1,17 +1,12 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Reveal from "react-awesome-reveal";
-import bastImage from "~/public/images/pages/รูป1-png-01.png";
-import bastImage2 from "~/public/images/pages/รูป1-png-02.png";
-import bastImage3 from "~/public/images/pages/รูป1-png-03.png";
-import bastImage4 from "~/public/images/pages/รูป1-png-04.png";
-import {
-  fadeIn,
-  fadeInUpShorter,
-  fadeInLeftShorter,
-  fadeInRightShorter,
-  fadeInDownShorter,
-} from "~/utils/data/keyframes";
+import bastImage from "~/public/images/pages/banner/รูป1-ภาษาอังกฤษ-png-01.png";
+import bastImage2 from "~/public/images/pages/banner/รูป1-ภาษาอังกฤษ-png-02.png";
+import bastImage3 from "~/public/images/pages/banner/รูป1-ภาษาอังกฤษ-png-03.png";
+import bastImage4 from "~/public/images/pages/banner/รูป1-ภาษาอังกฤษ-png-04.png";
+
+import { fadeInRightShorter } from "~/utils/data/keyframes";
 
 // import Custom Components
 import Link from "next/link";

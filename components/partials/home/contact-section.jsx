@@ -9,6 +9,13 @@ import { instagramSlider } from "~/utils/data/carousel";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+import banner1 from "~/public/images/pages/banner/footer/รูป2-png-01.png";
+import banner2 from "~/public/images/pages/banner/footer/รูป2-png-02.png";
+import banner3 from "~/public/images/pages/banner/footer/รูป2-png-03.png";
+import banner4 from "~/public/images/pages/banner/footer/รูป2-png-04.png";
+import banner5 from "~/public/images/pages/banner/footer/รูป2-png-05.png";
+import banner6 from "~/public/images/pages/banner/footer/รูป2-png-06.png";
+
 function InstagramSection() {
   const responsive = {
     superLargeDesktop: {
@@ -35,7 +42,7 @@ function InstagramSection() {
         <figure className="instagram">
           <Link href="#">
             <LazyLoadImage
-              src="https://d-themes.com/react/riode/demo-sport/images/home/instagram/1.jpg"
+              src={banner1.src}
               alt="Instagram"
               width="280"
               height="280"
@@ -46,7 +53,7 @@ function InstagramSection() {
         <figure className="instagram">
           <Link href="#">
             <LazyLoadImage
-              src="https://d-themes.com/react/riode/demo-sport/images/home/instagram/2.jpg"
+              src={banner2.src}
               alt="Instagram"
               width="280"
               height="280"
@@ -57,7 +64,7 @@ function InstagramSection() {
         <figure className="instagram">
           <Link href="#">
             <LazyLoadImage
-              src="https://d-themes.com/react/riode/demo-sport/images/home/instagram/3.jpg"
+              src={banner3.src}
               alt="Instagram"
               width="280"
               height="280"
@@ -68,7 +75,7 @@ function InstagramSection() {
         <figure className="instagram">
           <Link href="#">
             <LazyLoadImage
-              src="https://d-themes.com/react/riode/demo-sport/images/home/instagram/4.jpg"
+              src={banner4.src}
               alt="Instagram"
               width="280"
               height="280"
@@ -79,7 +86,7 @@ function InstagramSection() {
         <figure className="instagram">
           <Link href="#">
             <LazyLoadImage
-              src="https://d-themes.com/react/riode/demo-sport/images/home/instagram/5.jpg"
+              src={banner5.src}
               alt="Instagram"
               width="280"
               height="280"
@@ -90,7 +97,7 @@ function InstagramSection() {
         <figure className="instagram">
           <Link href="#">
             <LazyLoadImage
-              src="https://d-themes.com/react/riode/demo-sport/images/home/instagram/6.jpg"
+              src={banner6.src}
               alt="Instagram"
               width="280"
               height="280"
@@ -103,4 +110,4 @@ function InstagramSection() {
   );
 }
 
-export default React.memo(InstagramSection);
+export default InstagramSection;

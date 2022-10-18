@@ -142,9 +142,9 @@ export default function loginForm({ closeModal }) {
               id="signin-remember"
               name="signin-remember"
             />
-            <label className="form-control-label" htmlFor="signin-remember">
+            {/* <label className="form-control-label" htmlFor="signin-remember">
               Remember me
-            </label>
+            </label> */}
           </div>
           <Link href="#">
             <a className="lost-link">Lost your password?</a>

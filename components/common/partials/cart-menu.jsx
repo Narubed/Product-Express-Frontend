@@ -8,6 +8,7 @@ import { Icon } from "@iconify/react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useCurrentUser from "@/lib/hook/useCurrentUser";
 import { setCartShopping } from "~/lib/store/cartshopping";
+import { setWhiteList } from "~/lib/store/whitelist";
 import { getTotalPrice, getCartCount, toDecimal } from "~/utils";
 import { Box, MenuItem, Stack, IconButton, Badge } from "@mui/material";
 import { Button } from "primereact/button";
@@ -35,7 +36,7 @@ export default function componentName(props) {
   const { currentUser, fetcherWithToken } = useCurrentUser();
   const router = useRouter();
   const shopping = useSelector((state) => state.cartShopping.shopping);
-  console.log(shopping);
+  const whitelist = useSelector((state) => state.whitelist.whitelist);
   //
   const [storeAmountNumber, setAmountNumber] = useState(0);
   const [isTotal, setTotal] = useState(0);
@@ -52,11 +53,11 @@ export default function componentName(props) {
       China,
     });
     setLanguage(checkLanguage);
-    console.log(checkLanguage);
   }, [language]);
 
   useEffect(() => {
     cartMember();
+    cartWhiteList();
   }, []);
   useEffect(() => {
     const Amountnumber = shopping.map((item) => {
@@ -82,6 +83,17 @@ export default function componentName(props) {
     });
     const reduceTotal = valueSummary.reduce((sum, value) => sum + value, 0);
     setTotal(reduceTotal);
+  };
+
+  const cartWhiteList = async () => {
+    if (currentUser) {
+      const url = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/whitelist/member`;
+      await fetcherWithToken(url)
+        .then((json) => {
+          dispatch(setWhiteList(json.data.whitelist_detail));
+        })
+        .catch(() => dispatch(setWhiteList([])));
+    }
   };
 
   const cartMember = async () => {
@@ -160,16 +172,19 @@ export default function componentName(props) {
         <Icon icon="bxs:user" width="32" height="32" color="#FFFFFF" />
 
       </IconButton> */}
-      <IconButton>
-        <Badge badgeContent={20} color="warning">
-          <Icon
-            icon="akar-icons:heart"
-            width="32"
-            height="32"
-            color="#FFFFFF"
-          />
-        </Badge>
-      </IconButton>
+      <Link href="/pages/wishlist">
+        <IconButton>
+          <Badge badgeContent={whitelist.length} color="warning">
+            <Icon
+              icon="akar-icons:heart"
+              width="32"
+              height="32"
+              color="#FFFFFF"
+            />
+          </Badge>
+        </IconButton>
+      </Link>
+
       <div className="dropdown cart-dropdown type2 cart-offcanvas mr-0">
         <a href="#" className="cart-toggle link" onClick={showCartMenu}>
           <i className="d-icon-bag">

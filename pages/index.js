@@ -8,7 +8,9 @@ import BannerSection from "@/components/partials/home/banner-section";
 import ContactSection from "~/components/partials/home/contact-section";
 import NewCollection from "@/components/partials/home/new-collection";
 import BigBannerSection from "~/components/partials/home/big-banner-section";
-import NewsletterModal from '~/components/features/modals/newsletter-modal';
+import NewsletterModal from "~/components/features/modals/newsletter-modal";
+import Reveal from "react-awesome-reveal";
+import { fadeInRightShorter } from "~/utils/data/keyframes";
 
 export default function Home() {
   return (
@@ -28,14 +30,12 @@ export default function Home() {
         <BannerSection />
 
         {/* <FeaturedCollection products={ products } loading={ loading } /> */}
-        <BigBannerSection />
 
-       
+        <BigBannerSection />
 
         {/* <SmallCollection featured={ featured } bestSelling={ bestSelling } topRated={ topRated } loading={ loading } /> */}
         {/* <InstagramSection /> */}
         <ContactSection />
-        
       </div>
 
       <NewsletterModal />

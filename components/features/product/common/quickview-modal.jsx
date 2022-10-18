@@ -7,6 +7,9 @@ import { setQuickview } from "~/lib/store/model";
 import OwlCarousel from "~/components/features/owl-carousel";
 import { introSlider } from "~/utils/data/carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-multi-carousel/lib/styles.css";
+import Dialog from "@mui/material/Dialog";
+import EmblaCarouselComponent from "./emble-carosel";
 
 import DetailOne from "~/components/partials/product/detail/detail-one";
 
@@ -70,22 +73,9 @@ function Quickview(props) {
     >
       <>
         <div className={`row p-0 m-0 ${loaded ? "" : "d-none"}`}>
-          <div className="col-md-6">
+          <div className="col-md-6" style={{ padding: 0 }}>
             <div className="product-gallery mb-md-0 pb-0">
-              <div className="product-label-group">
-                {product.product_tag === "New" ? (
-                  <label className="product-label label-new">New</label>
-                ) : (
-                  ""
-                )}
-                {product.product_tag === "Hot" ? (
-                  <label className="product-label label-top">Hot</label>
-                ) : (
-                  ""
-                )}
-              </div>
-
-              <OwlCarousel
+              {/* <OwlCarousel
                 adClass="owl-theme owl-nav-fade intro-slider animation-slider"
                 options={introSlider}
               >
@@ -99,8 +89,9 @@ function Quickview(props) {
                     effect="opacity"
                   />
                 ))}
-              </OwlCarousel>
+              </OwlCarousel> */}
             </div>
+            <EmblaCarouselComponent product={product} />
           </div>
 
           <div className="col-md-6">

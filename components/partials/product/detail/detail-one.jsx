@@ -74,11 +74,20 @@ function DetailOne(props) {
       dispatch(setCartShopping([newValuePopup]));
       const url = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/cart_shopping/member`;
       await fetcherWithToken(url, { method: "GET" }).then(async (res) => {
-        const urlCart = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/cart_shopping/${res.data._id}`;
-        await fetcherWithToken(urlCart, {
-          method: "PUT",
-          body: JSON.stringify({ shopping_detail: [newValuePopup] }),
-        });
+        console.log(res);
+        if (res && res.create) {
+          const urlCart = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/cart_shopping`;
+          await fetcherWithToken(urlCart, {
+            method: "POST",
+            body: JSON.stringify({ shopping_detail: newWhiteList }),
+          });
+        } else {
+          const urlCart = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/cart_shopping/${res.data._id}`;
+          await fetcherWithToken(urlCart, {
+            method: "PUT",
+            body: JSON.stringify({ shopping_detail: [newValuePopup] }),
+          });
+        }
       });
     } else {
       // ถ้าตาม _id เเล้วซ้ำ
@@ -149,7 +158,7 @@ function DetailOne(props) {
     dispatch(setLoading(false));
   };
   return (
-    <div className={"product-details " + adClass}>
+    <div>
       {/* <CartPopup product={newProduct} /> */}
       {isNav ? (
         <div className="product-navigation">

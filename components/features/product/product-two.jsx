@@ -7,6 +7,7 @@ import Quickview from "~/components/features/product/common/quickview-modal";
 import { useSelector, useDispatch } from "react-redux";
 import { setQuickview } from "~/lib/store/model";
 import AddCart from "./features/add-cart";
+import AddWhiteList from "./features/add-whitelist";
 
 function ProductTwo(props) {
   const dispatch = useDispatch();
@@ -92,7 +93,12 @@ function ProductTwo(props) {
           </div>
           <div className="product-label-group">
             {product.product_tag === "Hot" && (
-              <label className="product-label label-new">Hot</label>
+              <label className="product-label label-hot">Hot</label>
+            )}
+          </div>
+          <div className="product-label-group">
+            {product.product_tag === "Sale" && (
+              <label className="product-label label-sale">Sale</label>
             )}
           </div>
           <div className="product-action-vertical">
@@ -118,14 +124,7 @@ function ProductTwo(props) {
           )} */}
             <a>
               <AddCart product={product} />
-
-              <button
-                className="btn-product-icon btn-wishlist"
-                title="Add to wishlist"
-                style={{ cursor: "pointer" }}
-              >
-                <Icon icon="ant-design:heart-outlined" />
-              </button>
+              <AddWhiteList product={product} />
             </a>
           </div>
 

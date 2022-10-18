@@ -25,9 +25,9 @@ export default function AlertDialogSlide() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      {/* <Button variant="outlined" onClick={handleClickOpen}>
         Slide in alert dialog
-      </Button>
+      </Button> */}
       <Dialog
         sx={{ background: "transparent", zIndex: "100000" }}
         open={loading}
