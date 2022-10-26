@@ -1,14 +1,9 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import imagesLoaded from "imagesloaded";
 import { useSelector, useDispatch } from "react-redux";
 import { setQuickview } from "~/lib/store/model";
-import OwlCarousel from "~/components/features/owl-carousel";
-import { introSlider } from "~/utils/data/carousel";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-multi-carousel/lib/styles.css";
-import Dialog from "@mui/material/Dialog";
 import EmblaCarouselComponent from "./emble-carosel";
 
 import DetailOne from "~/components/partials/product/detail/detail-one";
@@ -30,7 +25,7 @@ Modal.setAppElement("#__next");
 function Quickview(props) {
   const dispatch = useDispatch();
   const quickview = useSelector((state) => state.model.quickview);
-  const { slug, closeQuickview, isOpen, setOpen } = props;
+  const { isOpen, setOpen } = props;
   const [loaded, setLoadingState] = useState(false);
 
   const product = props.product;
@@ -55,11 +50,10 @@ function Quickview(props) {
     setTimeout(() => {
       setOpen(false);
       dispatch(setQuickview(false));
-      //   closeQuickview();
     }, 330);
   };
 
-  if (!isOpen) return <div></div>;
+  if (!isOpen) return <div>...</div>;
 
   return (
     <Modal

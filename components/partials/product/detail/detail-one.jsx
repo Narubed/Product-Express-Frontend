@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { useRouter } from "next/router";
-import Collapse from "react-bootstrap/collapse";
+import React, { useState } from "react";
 import numeral from "numeral";
 import { SelectButton } from "primereact/selectbutton";
 import { InputNumber } from "primereact/inputnumber";
 import { Button } from "primereact/button";
-import { Icon } from "@iconify/react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCartShopping } from "~/lib/store/cartshopping";
 import { setProductPopup } from "~/lib/store/productPopup";
@@ -22,10 +18,8 @@ function DetailOne(props) {
   const dispatch = useDispatch();
   const shopping = useSelector((state) => state.cartShopping.shopping);
   const language = useSelector((state) => state.language.language);
-  const loading = useSelector((state) => state.loading.loading);
 
-  let router = useRouter();
-  const { data, isStickyCart = false, adClass = "", isNav = true } = props;
+  const { data, isNav = true } = props;
   const [isSelect, setSelect] = useState(null);
   const [valueInput, setValueInput] = useState(1);
   let product = data;
@@ -65,7 +59,6 @@ function DetailOne(props) {
   };
   const onClickConfirm = async () => {
     dispatch(setLoading(true));
-    // dispatch(setQuickview(false));
     const detail = { ...isSelect, amount: valueInput };
     const newValuePopup = { ...product, product_select_detail: [detail] };
     dispatch(setProductPopup([newValuePopup]));
