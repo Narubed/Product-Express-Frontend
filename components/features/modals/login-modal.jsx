@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import Modal from "react-modal";
 import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import { setModelLogin } from "~/lib/store/model.login";
 
 import Link from "next/link";
 import useCurrentUser from "@/lib/hook/useCurrentUser";
 import LoginForm from "../form/loginForm";
 import RegisterForm from "../form/registerForm";
+import DropdownUser from "./dropdown-user";
 
 const customStyles = {
   overlay: {
@@ -21,8 +23,10 @@ let index = 0;
 Modal.setAppElement("#__next"); // เอามาทำไม ?
 
 function LoginModal() {
+  const router = useRouter();
   const dispatch = useDispatch();
   const modelLogin = useSelector((state) => state.modelLogin.modelLogin);
+  const language = useSelector((state) => state.language.language);
   const { currentUser, logout } = useCurrentUser();
   const [open, setOpen] = useState(false);
 
@@ -45,19 +49,30 @@ function LoginModal() {
     dispatch(setModelLogin(true));
   }
 
+  function onClickRegister() {
+    router.push("/pages/register");
+    closeModal();
+
+    console.log("onClickRegister");
+  }
+
   return (
     <>
       {currentUser ? (
-        <a
-          className="login-link pb-0 mr-4 pl-4"
-          href="#"
-          onClick={() => logout()}
-        >
-          ออกจากระบบ
-        </a>
+        <DropdownUser />
       ) : (
         <a className="login-link pb-0 mr-4 pl-4" href="#" onClick={openModal}>
-          เข้าสู่ระบบ
+          {language === "Thai"
+            ? "เข้าสู่ระบบ"
+            : language === "Eng"
+            ? "sign in"
+            : language === "Cambodia"
+            ? "ចូល"
+            : language === "Myanmar"
+            ? "ဆိုင်းအင်လုပ်ခြင်း"
+            : language === "Laos"
+            ? "ເຂົ້າ​ສູ່​ລະ​ບົບ"
+            : "登入"}
         </a>
       )}
 
@@ -82,13 +97,33 @@ function LoginModal() {
                 <TabList className="nav nav-tabs nav-fill align-items-center border-no justify-content-center mb-5">
                   <Tab className="nav-item">
                     <span className="nav-link border-no lh-1 ls-normal">
-                      Sign in
+                      {language === "Thai"
+                        ? "เข้าสู่ระบบ"
+                        : language === "Eng"
+                        ? "sign in"
+                        : language === " Cambodia"
+                        ? "ចូល"
+                        : language === "Myanmar"
+                        ? "ဆိုင်းအင်လုပ်ခြင်း"
+                        : language === "Laos"
+                        ? "ເຂົ້າ​ສູ່​ລະ​ບົບ"
+                        : "登入"}
                     </span>
                   </Tab>
                   <li className="delimiter">or</li>
-                  <Tab className="nav-item">
+                  <Tab className="nav-item" onClick={onClickRegister}>
                     <span className="nav-link border-no lh-1 ls-normal">
-                      Register
+                      {language === "Thai"
+                        ? "สมัครสมาชิก"
+                        : language === "Eng"
+                        ? "register"
+                        : language === " Cambodia"
+                        ? "ចុះឈ្មោះ"
+                        : language === "Myanmar"
+                        ? "မှတ်ပုံတင်"
+                        : language === "Laos"
+                        ? "ລົງທະບຽນ"
+                        : "登記"}
                     </span>
                   </Tab>
                 </TabList>
@@ -99,7 +134,7 @@ function LoginModal() {
                   </TabPanel>
 
                   <TabPanel className="tab-pane">
-                    <RegisterForm />
+                    {/* <RegisterForm /> */}
                   </TabPanel>
                 </div>
               </Tabs>

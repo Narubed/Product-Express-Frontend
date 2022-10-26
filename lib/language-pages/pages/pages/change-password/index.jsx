@@ -1,0 +1,111 @@
+export const Thai = {
+  Password: "รหัสผ่าน",
+  NewPassword: "รหัสผ่านใหม่",
+  ConfirmPassword: "ยืนยันรหัสผ่าน",
+  Correction: "ยืนยันการแก้ไข",
+  CanNotDoThis: "ไม่สามารถทำรายการนี้ได้",
+  BackPage: "กลับสู่หน้าหลัก",
+  DoNotMatch: "รหัสผ่านไม่ตรงกันหรือไม่สมบูรณ์",
+  Corrected: "รหัสผ่านได้รับการแก้ไขแล้ว.",
+  OriginCode: "รหัสเดิมไม่ถูกต้อง.",
+
+  PickPassword: "ใส่รหัสผ่าน",
+  Suggestions: "ข้อเสนอแนะ",
+  lowercase: "อย่างน้อยหนึ่งตัวพิมพ์เล็ก",
+  uppercase: "อย่างน้อยหนึ่งตัวอักษรตัวพิมพ์ใหญ่",
+  numeric: "อย่างน้อยหนึ่งหมายเลข",
+  characters: "ขั้นต่ำ 6 ตัวอักษร",
+};
+export const Eng = {
+  Password: "Password",
+  NewPassword: "New Password",
+  ConfirmPassword: "Confirm Password",
+  Correction: "confirm correction",
+  CanNotDoThis: "Can't make this list",
+  BackPage: "back to main page",
+  DoNotMatch: "Passwords do not match or are incomplete.",
+  Corrected: "The password has been corrected.",
+  OriginCode: "The original code is invalid.",
+
+  PickPassword: "Pick a password",
+  Suggestions: "Suggestions",
+  lowercase: "At least one lowercase",
+  uppercase: "At least one uppercase",
+  numeric: "At least one numeric",
+  characters: "Minimum 6 characters",
+};
+
+export const Cambodia = {
+  Password: "ពាក្យសម្ងាត់",
+  NewPassword: "ពាក្យសម្ងាត់​ថ្មី",
+  ConfirmPassword: "បញ្ជាក់ពាក្យសម្ងាត់",
+  Correction: "បញ្ជាក់ការកែតម្រូវ",
+  CanNotDoThis: "មិនអាចបង្កើតបញ្ជីនេះបានទេ។",
+  BackPage: "ត្រឡប់ទៅទំព័រមេ",
+  DoNotMatch: "ពាក្យសម្ងាត់មិនត្រូវគ្នា ឬមិនពេញលេញ។",
+  Corrected: "ពាក្យសម្ងាត់ត្រូវបានកែតម្រូវ។.",
+  OriginCode: "លេខកូដដើមមិនត្រឹមត្រូវទេ។.",
+
+  PickPassword: "បញ្ចូលពាក្យសម្ងាត់",
+  Suggestions: "មតិកែលម្អ",
+  lowercase: "យ៉ាងហោចណាស់អក្សរតូចមួយ។",
+  uppercase: "យ៉ាងហោចណាស់អក្សរធំមួយ។",
+  numeric: "យ៉ាងហោចណាស់លេខមួយ។",
+  characters: "យ៉ាងហោចណាស់ 6 តួអក្សរ",
+};
+
+export const Myanmar = {
+  Password: "စကားဝှက်",
+  NewPassword: "စကားဝှက်အသစ်",
+  ConfirmPassword: "စကားဝှက်အတည်ပြုခြင်း",
+  Correction: "အမှားပြင်ဆင်ချက်ကို အတည်ပြုပါ။",
+  CanNotDoThis: "ဒီစာရင်းကို လုပ်လို့မရဘူး",
+  BackPage: "ပင်မစာမျက်နှာသို့ ပြန်သွားရန်",
+  DoNotMatch: "စကားဝှက်များ မကိုက်ညီပါ သို့မဟုတ် မပြည့်စုံပါ။",
+  Corrected: "စကားဝှက်ကို ပြုပြင်ပြီးပါပြီ။.",
+  OriginCode: "မူရင်းကုဒ်သည် မမှန်ကန်ပါ။.",
+
+  PickPassword: "စကားဝှက်ကိုရိုက်ထည့်ပါ။",
+  Suggestions: "တုံ့ပြန်ချက်",
+  lowercase: "အနည်းဆုံး စာလုံးသေးတစ်လုံး",
+  uppercase: "အနည်းဆုံး စာလုံးအကြီး တစ်လုံး",
+  numeric: "အနည်းဆုံး နံပါတ်တစ်ခု",
+  characters: "အနည်းဆုံး 6 လုံး",
+};
+
+export const Laos = {
+  Password: "ລະຫັດຜ່ານ",
+  NewPassword: "ລະ​ຫັດ​ຜ່ານ​ໃຫມ່​",
+  ConfirmPassword: "ຢືນ​ຢັນ​ລະ​ຫັດ",
+  Correction: "ຢືນຢັນການແກ້ໄຂ",
+  CanNotDoThis: "ບໍ່ສາມາດສ້າງລາຍຊື່ນີ້ໄດ້",
+  BackPage: "ກັບໄປທີ່ໜ້າຫຼັກ",
+  DoNotMatch: "ລະຫັດຜ່ານບໍ່ກົງກັນ ຫຼື ບໍ່ຄົບຖ້ວນ.",
+  Corrected: "ລະຫັດຜ່ານໄດ້ຖືກແກ້ໄຂແລ້ວ.",
+  OriginCode: "ລະຫັດຕົ້ນສະບັບບໍ່ຖືກຕ້ອງ.",
+
+  PickPassword: "ໃສ່ລະຫັດຜ່ານ",
+  Suggestions: "ຄໍາຄຶດຄໍາເຫັນ",
+  lowercase: "ຢ່າງໜ້ອຍໜຶ່ງຕົວພິມນ້ອຍ",
+  uppercase: "ຢ່າງໜ້ອຍໜຶ່ງຕົວພິມໃຫຍ່",
+  numeric: "ຢ່າງໜ້ອຍໜຶ່ງຕົວເລກ",
+  characters: "ຢ່າງໜ້ອຍ 6 ຕົວອັກສອນ",
+};
+export const China = {
+  Password: "密碼",
+  NewPassword: "新密碼",
+  ConfirmPassword: "確認密碼",
+  Correction: "確認更正",
+  CanNotDoThis: "無法列出此列表",
+  BackPage: "返回主頁",
+  DoNotMatch: "密碼不匹配或不完整。",
+  Corrected: "密碼已更正。.",
+  OriginCode: "原代碼無效。",
+
+  PickPassword: "輸入密碼",
+  Suggestions: "反饋",
+  lowercase: "至少一個小寫字母",
+  uppercase: "至少有一個大寫字母",
+  numeric: "至少一個數字",
+  characters: "最少 6 個字符",
+};

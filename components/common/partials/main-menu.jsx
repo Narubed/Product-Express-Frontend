@@ -44,14 +44,21 @@ function MainMenu() {
           </Link>
         </li>
 
-        <li className={`${pathname.includes("/shop") ? "active" : ""}`}>
+        <li id="menu-home" className={pathname === "/shop" ? "active" : ""}>
+          <Link href="/shop">
+            <a>{storeLanguage?.Products}</a>
+          </Link>
+        </li>
+
+
+        {/* <li className={`${pathname.includes("/shop") ? "active" : ""}`}>
           <Link href="/shop">
             <a style={{ display: "flex", alignItems: "center" }}>
               {storeLanguage?.Products}
               <Icon icon="dashicons:arrow-down-alt2" width="14" height="14" />
             </a>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

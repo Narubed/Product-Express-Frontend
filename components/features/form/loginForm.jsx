@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setToken } from "@/lib/store/session";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
@@ -28,6 +28,7 @@ export default function loginForm({ closeModal }) {
   const dispatch = useDispatch();
   const router = useRouter();
   // const navigate = useNavigate();
+  const language = useSelector((state) => state.language.language);
   const [showPassword, setShowPassword] = useState(false);
 
   const LoginSchema = Yup.object().shape({
@@ -146,9 +147,9 @@ export default function loginForm({ closeModal }) {
               Remember me
             </label> */}
           </div>
-          <Link href="#">
+          {/* <Link href="#">
             <a className="lost-link">Lost your password?</a>
-          </Link>
+          </Link> */}
         </div>
         <LoadingButton
           fullWidth
@@ -158,7 +159,20 @@ export default function loginForm({ closeModal }) {
           loading={isSubmitting}
           color="primary"
         >
-          <a style={{ fontSize: "16px" }}>เข้าสู่ระบบ</a>
+          <a style={{ fontSize: "16px" }}>
+            {" "}
+            {language === "Thai"
+              ? "เข้าสู่ระบบ"
+              : language === "Eng"
+              ? "sign in"
+              : language === "Cambodia"
+              ? "ចូល"
+              : language === "Myanmar"
+              ? "ဆိုင်းအင်လုပ်ခြင်း"
+              : language === "Laos"
+              ? "ເຂົ້າ​ສູ່​ລະ​ບົບ"
+              : "登入"}
+          </a>
         </LoadingButton>
       </FormProvider>
     </div>

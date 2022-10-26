@@ -79,7 +79,7 @@ function DetailOne(props) {
           const urlCart = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/cart_shopping`;
           await fetcherWithToken(urlCart, {
             method: "POST",
-            body: JSON.stringify({ shopping_detail: newWhiteList }),
+            body: JSON.stringify({ shopping_detail: [newValuePopup] }),
           });
         } else {
           const urlCart = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/cart_shopping/${res.data._id}`;
