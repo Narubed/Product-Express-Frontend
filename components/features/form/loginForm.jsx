@@ -39,8 +39,8 @@ export default function loginForm({ closeModal }) {
   });
 
   const defaultValues = {
-    email: "test@test.com",
-    password: "987654321",
+    email: "",
+    password: "",
     remember: true,
   };
 

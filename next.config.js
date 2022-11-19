@@ -6,8 +6,9 @@ const nextConfig = {
     domains: [
       "d-themes.com",
       "localhost",
+      "nbadigitalservice.com",
       "product-express.nbadigitalservice.com",
-      "192.168.1.23"
+      "192.168.1.59",
     ],
   },
   // eslint: {

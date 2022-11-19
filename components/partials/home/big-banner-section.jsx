@@ -46,13 +46,13 @@ function BigBannerSection(props) {
               <h4 className="banner-subtitle mt-2 mb-0">Flash Sale</h4>
               <h3 className="banner-title font-weight-bold text-uppercase mb-5">
                 {" "}
-                Light Sneaker
+                drinking water
               </h3>
               <p className="text-uppercase mb-6">
                 <span className="d-block text-normal mb-1">
-                  2021 Fashion Style Collection
+                  You can choose to buy now.
                 </span>{" "}
-                Start At $99.00
+                2022 Style Collection
               </p>
               <Link href="/shop">
                 <button className="btn btn-rounded btn-outline btn-white mb-1">

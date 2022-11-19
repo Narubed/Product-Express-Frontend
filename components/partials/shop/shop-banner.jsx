@@ -8,7 +8,7 @@ export default function ShopBanner(props) {
     <div
       className="page-header shop-banner"
       style={{
-        backgroundImage: `url(https://d-themes.com/react/riode/demo-sport/images/shop/page-header-back.jpg)`,
+        backgroundImage: `url(https://nbadigitalservice.com/static/media/background-purple2.37df479a.jpg)`,
         backgroundColor: "#3C63A4",
       }}
     >

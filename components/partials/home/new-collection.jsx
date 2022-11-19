@@ -56,7 +56,10 @@ function BestCollection(props) {
       );
       productPustBrand.push({ ...element, brand_name: idx.brand_name });
     });
-    setProducts(productPustBrand);
+    console.log(productPustBrand);
+    setProducts(
+      productPustBrand.filter((item) => item.product_status === true)
+    );
     setLoading(false);
   };
 

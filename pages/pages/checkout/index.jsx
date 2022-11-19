@@ -149,32 +149,32 @@ export default function checkout() {
                 </Link>
               </h3>
               <h3 className="title title-simple title-step active">
-                <Link href="#">
+                <Link href="/pages/checkout">
                   <a style={{ fontSize: "12px" }}> {storeLanguage.Checkout} </a>
                 </Link>
               </h3>
-              <h3 className="title title-simple title-step">
+              <h3 className="title title-simple title-step ">
                 <Link href="/pages/pending">
                   <a style={{ fontSize: "12px" }}> {storeLanguage.Pending} </a>
                 </Link>
               </h3>
-              <h3 className="title title-simple title-step">
-                <Link href="/pages/pending">
+              <h3 className="title title-simple title-step ">
+                <Link href="/pages/confirm-orders">
                   <a style={{ fontSize: "12px" }}>{storeLanguage.Waiting} </a>
                 </Link>
               </h3>
-              <h3 className="title title-simple title-step">
-                <Link href="/pages/pending">
+              <h3 className="title title-simple title-step ">
+                <Link href="/pages/cut-around">
                   <a style={{ fontSize: "12px" }}> {storeLanguage.ToReceive}</a>
                 </Link>
               </h3>
-              <h3 className="title title-simple title-step">
-                <Link href="/pages/pending">
+              <h3 className="title title-simple title-step ">
+                <Link href="/pages/success-delivery">
                   <a style={{ fontSize: "12px" }}>{storeLanguage.Succeed}</a>
                 </Link>
               </h3>
-              <h3 className="title title-simple title-step">
-                <Link href="/pages/pending">
+              <h3 className="title title-simple title-step ">
+                <Link href="/pages/cancel-orders">
                   <a style={{ fontSize: "12px" }}>{storeLanguage.Canceled}</a>
                 </Link>
               </h3>

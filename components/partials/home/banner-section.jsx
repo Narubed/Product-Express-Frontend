@@ -52,7 +52,7 @@ function BannerSection(props) {
                       Starting at $24.00
                     </p> */}
                       <Link
-                        href={{ pathname: "/shop", query: { category: "men" } }}
+                        href={{ pathname: "/shop"}}
                       >
                         <button
                           className="btn btn-md btn-outline btn-white"
@@ -70,7 +70,7 @@ function BannerSection(props) {
                     style={{ backgroundColor: "#f3f3f3" }}
                   >
                     <Link
-                      href={{ pathname: "/shop", query: { category: "women" } }}
+                      href={{ pathname: "/shop" }}
                     >
                       <a>
                         <figure className="category-media">
@@ -112,7 +112,7 @@ function BannerSection(props) {
                     style={{ backgroundColor: "#f3f3f3" }}
                   >
                     <Link
-                      href={{ pathname: "/shop", query: { category: "women" } }}
+                      href={{ pathname: "/shop" }}
                     >
                       <a>
                         <figure className="category-media">
@@ -136,7 +136,7 @@ function BannerSection(props) {
                 style={{ backgroundColor: "#f3f3f3" }}
               >
                 <Link
-                  href={{ pathname: "/shop", query: { category: "winter" } }}
+                  href={{ pathname: "/shop" }}
                 >
                   <a>
                     <figure className="category-media">
@@ -159,7 +159,7 @@ function BannerSection(props) {
                 >
                   <h4 className="category-name">Shop Now</h4>
                   <Link
-                    href={{ pathname: "/shop", query: { category: "winter" } }}
+                    href={{ pathname: "/shop" }}
                   >
                     <button className="btn btn-primary btn-block">
                       Shop Now

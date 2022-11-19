@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import Cookie from "js-cookie";
+import Link from "next/link";
+import Image1 from "~/public/images/pages/logo/รูปโฆษณา-720x384px-01.jpg"
 
 const modalStyles = {
   content: {
@@ -69,36 +71,34 @@ export default function NewsletterModal() {
         id="newsletter-popup"
         style={{
           backgroundImage:
-            "url(https://d-themes.com/react/riode/demo-sport/images/newsletter-popup.jpg)",
+            `url(${Image1.src})`,
         }}
       >
         <div className="newsletter-content">
           <h4 className="text-uppercase text-dark">
-            Up to <span className="text-primary">20% Off</span>
+            <span className="text-primary"> Welcome </span>
           </h4>
           <h2 className="font-weight-semi-bold">
-            Sign up to <span>RIODE</span>
+            To <span>Product Express</span>
           </h2>
           <p className="text-grey">
-            Subscribe to the Riode eCommerce newsletter to receive timely
-            updates from your favorite products.
+            This is an online merchandising program of the NBA Digital Service
+            Center Company.
           </p>
           <form
             action="#"
             method="get"
             className="input-wrapper input-wrapper-inline input-wrapper-round"
           >
-            <input
-              type="email"
-              className="form-control email"
-              name="email"
-              id="email2"
-              placeholder="search products ..."
-              required
-            />
-            <button className="btn btn-dark" type="submit">
-              Search
-            </button>
+            <Link href="https://nbadigitalservice.com" target="_blank">
+              <button
+                className="btn btn-dark"
+                type="submit"
+                style={{ width: "100%" }}
+              >
+                NBA Digital Service Center
+              </button>
+            </Link>
           </form>
           <div className="form-checkbox justify-content-center">
             <input

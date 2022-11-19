@@ -1,0 +1,165 @@
+.background-effect,
+.background-effect-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.background-effect-wrapper {
+  overflow: hidden;
+}
+
+.background-effect {
+  animation-duration: 40s;
+}
+
+.snowfall {
+  background-image: url(../../images/home/s1.png), url(../../images/home/s2.png),
+    url(../../images/home/s3.png);
+  animation: snow 10s linear infinite;
+  z-index: 1;
+}
+
+.sparkle {
+  background-image: url(../../images/home/sparkle1.png),
+    url(../../images/home/sparkle2.png);
+  animation: sparkle 60s linear infinite;
+}
+
+.particle-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#sparkle {
+  background: none;
+  font-family: Androgyne;
+  background-image: url("http://www.wearewebstars.dk/codepen/img/s1.png"),
+    url("http://www.wearewebstars.dk/codepen/img//s2.png"),
+    url("http://www.wearewebstars.dk/codepen/img//s3.png");
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  -webkit-animation: sparkle 10s linear infinite;
+  -moz-animation: sparkle 10s linear infinite;
+  -ms-animation: sparkle 10s linear infinite;
+  animation: sparkle 10s linear infinite;
+}
+@keyframes sparkle {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  50% {
+    background-position: -500px -500px, -100px -200px, 100px -150px;
+  }
+  100% {
+    background-position: -500px -1000px, -200px -400px, 100px -300px;
+  }
+}
+@-moz-keyframes sparkle {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px;
+  }
+  100% {
+    background-position: 400px 1000px, 200px 400px, 100px 300px;
+  }
+}
+@-webkit-keyframes sparkle {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px;
+  }
+  100% {
+    background-position: 500px 1000px, 200px 400px, -100px 300px;
+  }
+}
+@-ms-keyframes sparkle {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px;
+  }
+  100% {
+    background-position: 500px 1000px, 200px 400px, -100px 300px;
+  }
+}
+
+
+
+#snow {
+  background: none;
+  font-family: Androgyne;
+  background-image: url("http://www.wearewebstars.dk/codepen/img/s1.png"),
+    url("http://www.wearewebstars.dk/codepen/img//s2.png"),
+    url("http://www.wearewebstars.dk/codepen/img//s3.png");
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  -webkit-animation: snow 10s linear infinite;
+  -moz-animation: snow 10s linear infinite;
+  -ms-animation: snow 10s linear infinite;
+  animation: snow 10s linear infinite;
+}
+@keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px;
+  }
+  100% {
+    background-position: 500px 1000px, 200px 400px, -100px 300px;
+  }
+}
+@-moz-keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px;
+  }
+  100% {
+    background-position: 400px 1000px, 200px 400px, 100px 300px;
+  }
+}
+@-webkit-keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px;
+  }
+  100% {
+    background-position: 500px 1000px, 200px 400px, -100px 300px;
+  }
+}
+@-ms-keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px;
+  }
+  100% {
+    background-position: 500px 1000px, 200px 400px, -100px 300px;
+  }
+}

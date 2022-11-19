@@ -35,9 +35,11 @@ function ShopNavigationFilter() {
     );
     setType(types.data.data);
     setBrand(brands.data.data);
-
+    const filterStatusProduct = products.data.data.filter(
+      (item) => item.product_status === true
+    );
     const productPustBrand = [];
-    products.data.data.forEach((element) => {
+    filterStatusProduct.forEach((element) => {
       const idx = brands?.data?.data.find(
         (item) => item._id === element.product_brand_id
       );

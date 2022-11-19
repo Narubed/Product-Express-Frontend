@@ -4,7 +4,7 @@ import Link from "next/link";
 import { mainMenu } from "~/utils/data/menu";
 import { Icon } from "@iconify/react";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import UseLanguage from "~/lib/hook/useLanguage";
 
 import {
@@ -49,7 +49,6 @@ function MainMenu() {
             <a>{storeLanguage?.Products}</a>
           </Link>
         </li>
-
 
         {/* <li className={`${pathname.includes("/shop") ? "active" : ""}`}>
           <Link href="/shop">

@@ -53,7 +53,7 @@ function Quickview(props) {
     }, 330);
   };
 
-  if (!isOpen) return <div>...</div>;
+  if (!isOpen) return <div></div>;
 
   return (
     <Modal

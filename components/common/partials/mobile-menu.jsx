@@ -5,11 +5,37 @@ import Link from "next/link";
 // import Card from "~/components/features/accordion/card";
 import { mainMenu } from "~/utils/data/menu";
 import { Icon } from "@iconify/react";
+import { useSelector } from "react-redux";
+import UseLanguage from "~/lib/hook/useLanguage";
+
+import {
+  Thai,
+  Eng,
+  Cambodia,
+  Myanmar,
+  Laos,
+  China,
+} from "~/lib/language-pages/pages/menu";
 
 export default function componentName(props) {
+  const language = useSelector((state) => state.language.language);
+  const [storeLanguage, setLanguage] = useState({});
   const [search, setSearch] = useState("");
   const [timer, setTimer] = useState(null);
   const router = useRouter();
+
+  useEffect(() => {
+    const checkLanguage = UseLanguage({
+      Thai,
+      Eng,
+      Cambodia,
+      Myanmar,
+      Laos,
+      language,
+      China,
+    });
+    setLanguage(checkLanguage);
+  }, [language]);
 
   useEffect(() => {
     window.addEventListener("resize", hideMobileMenuHandler);
@@ -97,7 +123,14 @@ export default function componentName(props) {
           </form> */}
           <ul className="mobile-menu mmenu-anim">
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/">
+                <a> {storeLanguage?.Home}</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/shop">
+                <a>{storeLanguage?.Products}</a>
+              </Link>
             </li>
           </ul>
         </div>

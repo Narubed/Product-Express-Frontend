@@ -20,6 +20,7 @@ import {
   Container,
   Grid,
   Paper,
+  Chip,
   Button,
 } from "@mui/material";
 import Image from "next/image";
@@ -81,53 +82,13 @@ export default function index() {
         preOrders = data.reverse();
       });
       const filterStatus = preOrders.filter(
-        (item) => item.po_status === "รอตรวจสอบ"
+        (item) =>
+          item.po_status === "ผู้ใช้ยกเลิก" ||
+          item.po_status === "ผู้ดูแลยกเลิก"
       );
       setPreOrders(filterStatus);
       console.log(filterStatus);
     }
-  };
-  const onClickCancelOrder = async (item) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-      cancelBuButtonText: "Cancel",
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        const url = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/pre_orders/${item._id}`;
-        const newTimeStamp = [];
-        item.po_timestamp.forEach((element) => {
-          newTimeStamp.push(element);
-        });
-
-        newTimeStamp.push({
-          name: "ผู้ใช้ยกเลิก",
-          timestamp: dayjs(Date.now()).format(),
-        });
-
-        await fetcherWithToken(url, {
-          method: "PUT",
-          body: JSON.stringify({
-            po_timestamp: newTimeStamp,
-            po_status: "ผู้ใช้ยกเลิก",
-          }),
-        });
-        fetcherPreOrder();
-
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Your work has been saved",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
-    });
   };
 
   return (
@@ -156,7 +117,7 @@ export default function index() {
                   <a style={{ fontSize: "12px" }}> {storeLanguage.Checkout} </a>
                 </Link>
               </h3>
-              <h3 className="title title-simple title-step active">
+              <h3 className="title title-simple title-step ">
                 <Link href="/pages/pending">
                   <a style={{ fontSize: "12px" }}> {storeLanguage.Pending} </a>
                 </Link>
@@ -171,12 +132,12 @@ export default function index() {
                   <a style={{ fontSize: "12px" }}> {storeLanguage.ToReceive}</a>
                 </Link>
               </h3>
-              <h3 className="title title-simple title-step ">
+              <h3 className="title title-simple title-step">
                 <Link href="/pages/success-delivery">
                   <a style={{ fontSize: "12px" }}>{storeLanguage.Succeed}</a>
                 </Link>
               </h3>
-              <h3 className="title title-simple title-step ">
+              <h3 className="title title-simple title-step active">
                 <Link href="/pages/cancel-orders">
                   <a style={{ fontSize: "12px" }}>{storeLanguage.Canceled}</a>
                 </Link>
@@ -215,15 +176,15 @@ export default function index() {
                       sx={{ textAlign: "right" }}
                     >
                       {storeLanguage.ProductStatus} :{" "}
-                      {value.po_status === "รอตรวจสอบ" &&
-                        storeLanguage.WaitForReview}{" "}
-                      <Button
+                      <Chip
                         color="error"
-                        variant="outlined"
-                        onClick={() => onClickCancelOrder(value)}
-                      >
-                        {storeLanguage.CancelList}
-                      </Button>
+                        label={
+                          value.po_status === "ผู้ใช้ยกเลิก"
+                            ? `user cancel`
+                            : "admin cancel"
+                        }
+                        sx={{ fontSize: 14 }}
+                      />
                     </Typography>
                   </div>
                 </div>

@@ -11,6 +11,7 @@ import MainMenu from "~/components/common/partials/main-menu";
 // import SearchBox from '~/components/common/partials/search-box';
 // import LoginModal from "~/components/features/modals/login-modal";
 import LoginModal from "~/components/features/modals/login-modal";
+import Logo from "~/public/images/pages/logo/รูปโลโก้-214x65px-01.png";
 
 import { headerBorderRemoveList } from "~/utils/data/menu";
 
@@ -49,7 +50,7 @@ export default function Header(props) {
             <Link href="/">
               <a className="logo">
                 <Image
-                  src="https://d-themes.com/react/riode/demo-sport/images/home/logo-footer.png"
+                  src={Logo.src}
                   alt="logo"
                   width="154"
                   height="43"
@@ -72,7 +73,7 @@ export default function Header(props) {
                 <i className="d-icon-phone"></i>
               </div>
               <div className="icon-box-content">
-                <span>(083) 080-0000</span>
+                <span>052-083244</span>
               </div>
             </a>
 

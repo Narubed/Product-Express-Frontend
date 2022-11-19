@@ -20,6 +20,7 @@ import {
   Container,
   Grid,
   Paper,
+  Chip,
   Button,
 } from "@mui/material";
 import Image from "next/image";
@@ -33,7 +34,7 @@ import {
   Myanmar,
   Laos,
   China,
-} from "~/lib/language-pages/pages/pages/pending";
+} from "~/lib/language-pages/pages/pages/success-delivery";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -70,8 +71,8 @@ export default function index() {
   }, [currentUser]);
 
   const fetcherPreOrder = async () => {
-    console.log(currentUser);
     if (currentUser) {
+      dispatch(setLoading(true));
       const url = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/pre_orders/member/${currentUser._id}`;
       let preOrders = [];
       await fetcherWithToken(url, {
@@ -81,13 +82,16 @@ export default function index() {
         preOrders = data.reverse();
       });
       const filterStatus = preOrders.filter(
-        (item) => item.po_status === "รอตรวจสอบ"
+        (item) =>
+          item.po_status === "สินค้าถึงสาขาปลายทางแล้ว" ||
+          item.po_status === "ได้รับสินค้าแล้ว"
       );
       setPreOrders(filterStatus);
-      console.log(filterStatus);
+      dispatch(setLoading(false));
     }
   };
-  const onClickCancelOrder = async (item) => {
+
+  const headleClickConfirm = async (props) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -95,18 +99,19 @@ export default function index() {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes ",
       cancelBuButtonText: "Cancel",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const url = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/pre_orders/${item._id}`;
+        dispatch(setLoading(true));
+        const url = `${process.env.NEXT_PUBLIC_PRODUCT_EXPRESS_BACKEND}/pre_orders/${props._id}`;
         const newTimeStamp = [];
-        item.po_timestamp.forEach((element) => {
+        props.po_timestamp.forEach((element) => {
           newTimeStamp.push(element);
         });
 
         newTimeStamp.push({
-          name: "ผู้ใช้ยกเลิก",
+          name: "ได้รับสินค้าแล้ว",
           timestamp: dayjs(Date.now()).format(),
         });
 
@@ -114,13 +119,13 @@ export default function index() {
           method: "PUT",
           body: JSON.stringify({
             po_timestamp: newTimeStamp,
-            po_status: "ผู้ใช้ยกเลิก",
+            po_status: "ได้รับสินค้าแล้ว",
           }),
         });
+        dispatch(setLoading(false));
         fetcherPreOrder();
 
         Swal.fire({
-          position: "top-end",
           icon: "success",
           title: "Your work has been saved",
           showConfirmButton: false,
@@ -156,7 +161,7 @@ export default function index() {
                   <a style={{ fontSize: "12px" }}> {storeLanguage.Checkout} </a>
                 </Link>
               </h3>
-              <h3 className="title title-simple title-step active">
+              <h3 className="title title-simple title-step ">
                 <Link href="/pages/pending">
                   <a style={{ fontSize: "12px" }}> {storeLanguage.Pending} </a>
                 </Link>
@@ -171,7 +176,7 @@ export default function index() {
                   <a style={{ fontSize: "12px" }}> {storeLanguage.ToReceive}</a>
                 </Link>
               </h3>
-              <h3 className="title title-simple title-step ">
+              <h3 className="title title-simple title-step active">
                 <Link href="/pages/success-delivery">
                   <a style={{ fontSize: "12px" }}>{storeLanguage.Succeed}</a>
                 </Link>
@@ -197,7 +202,6 @@ export default function index() {
               }}
             >
               {/* <CardActionArea> */}
-
               <CardContent>
                 <div
                   style={{ justifyContent: "space-between", display: "flex" }}
@@ -214,16 +218,19 @@ export default function index() {
                       component="div"
                       sx={{ textAlign: "right" }}
                     >
-                      {storeLanguage.ProductStatus} :{" "}
-                      {value.po_status === "รอตรวจสอบ" &&
-                        storeLanguage.WaitForReview}{" "}
-                      <Button
-                        color="error"
-                        variant="outlined"
-                        onClick={() => onClickCancelOrder(value)}
-                      >
-                        {storeLanguage.CancelList}
-                      </Button>
+                      {value.po_status === "สินค้าถึงสาขาปลายทางแล้ว" ? (
+                        <Chip
+                          color="secondary"
+                          label={storeLanguage.Destination}
+                          sx={{ fontSize: 14 }}
+                        />
+                      ) : (
+                        <Chip
+                          color="secondary"
+                          label={storeLanguage.Received}
+                          sx={{ fontSize: 14 }}
+                        />
+                      )}
                     </Typography>
                   </div>
                 </div>
@@ -340,6 +347,17 @@ export default function index() {
                 </div>
               </CardActions>
               {/* </CardActionArea> */}
+              {value.po_status === "สินค้าถึงสาขาปลายทางแล้ว" && (
+                <Grid sx={{ textAlign: "right", pb: 2 }}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => headleClickConfirm(value)}
+                  >
+                    <a style={{ fontSize: 14 }}>{storeLanguage.Received}</a>
+                  </Button>
+                </Grid>
+              )}
             </Card>
           ))}
         </Container>

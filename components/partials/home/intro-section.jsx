@@ -4,7 +4,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import Link from "next/link";
 // import Custom Components
 import OwlCarousel from "~/components/features/owl-carousel";
-
+import Slide1 from "~/public/images/pages/banner/slide/รูปปก1-1920x945px-01.jpg"
+import Slide2 from "~/public/images/pages/banner/slide/รูปปก2-1920x945px-01.jpg"
 import { introSlider } from "~/utils/data/carousel";
 import {
   fadeInUpShorter,
@@ -15,7 +16,7 @@ import {
 
 function IntroSection(props) {
   return (
-    <section className="intro-section" style={{ backgroundColor: "#222" }}>
+    <section className="intro-section" style={{ backgroundColor: "#FFFF" }}>
       <OwlCarousel
         adClass="owl-theme owl-nav-fade intro-slider animation-slider"
         options={introSlider}
@@ -24,16 +25,23 @@ function IntroSection(props) {
           className="intro-slide1 banner banner-fixed"
           style={{ backgroundColor: "#222" }}
         >
+          <div className="background-effect-wrapper">
+            <div className="background-effect kenBurnsToRight">
+              <div className="particle-effect snowfall"></div>
+            </div>
+          </div>
+       
           <figure>
             <LazyLoadImage
-              src="https://d-themes.com/react/riode/demo-sport/images/home/slides/1.jpg"
+              // src="https://d-themes.com/react/riode/demo-sport/images/home/slides/1.jpg"
+              src={Slide1.src}
               alt="banner"
               width="1903"
               height="896"
               effect="opacity"
             />
           </figure>
-          <div className="container">
+          {/* <div className="container">
             <div className="banner-content y-50">
               <div className="row">
                 <div className="col-md-6">
@@ -105,22 +113,28 @@ function IntroSection(props) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div
           className="intro-slide2 banner banner-fixed"
           style={{ backgroundColor: "#222" }}
         >
+           <div className="background-effect-wrapper">
+              <div className="background-effect kenBurnsToLeft">
+                <div className="particle-effect sparkle"></div>
+              </div>
+            </div>
           <figure>
             <LazyLoadImage
-              src="https://d-themes.com/react/riode/demo-sport/images/home/slides/2.jpg"
+              // src="https://d-themes.com/react/riode/demo-sport/images/home/slides/2.jpg"
+              src={Slide2.src}
               alt="banner"
               width="1903"
               height="896"
               effect="opacity"
             />
           </figure>
-          <div className="container">
+          {/* <div className="container">
             <div className="banner-content y-50">
               <div className="row">
                 <div className="col-md-6 banner-image-wrapper">
@@ -179,7 +193,7 @@ function IntroSection(props) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </OwlCarousel>
 
