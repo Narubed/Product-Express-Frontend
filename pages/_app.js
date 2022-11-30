@@ -9,6 +9,8 @@ import "primereact/resources/primereact.min.css"; //core css
 import "primeicons/primeicons.css"; //icons
 
 function MyApp({ Component, pageProps }) {
+  if (process.env.NODE_ENV !== "development")
+    console.log = console.warn = console.error = () => {};
   return (
     <Provider store={store}>
       <Helmet>
